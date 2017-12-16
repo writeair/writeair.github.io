@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-architecture/</loc>
-        <lastmod>2017-12-09T10:05:21.000Z</lastmod>
+        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
+        <lastmod>2017-12-16T13:44:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
+        <lastmod>2017-12-16T13:42:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,15 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/python/basics/python-basics/</loc>
-        <lastmod>2017-12-09T09:19:12.000Z</lastmod>
+        <lastmod>2017-12-16T13:36:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-architecture/</loc>
+        <lastmod>2017-12-09T10:05:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -111,14 +127,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/etcd/etcd-commands/</loc>
-        <lastmod>2017-11-20T10:58:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/etcd/etcd-introduction/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,7 +143,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-basis/</loc>
+        <loc>http://www.huweihuang.com/article/etcd/etcd-commands/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -144,6 +152,14 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/golang/golang-concurrent-programming/</loc>
+        <lastmod>2017-11-20T10:58:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/golang-basis/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,14 +183,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
-        <lastmod>2017-11-20T10:58:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/golang/golang-pointer/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -183,7 +191,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -199,7 +207,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -208,6 +216,14 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-basic-concepts/</loc>
+        <lastmod>2017-11-20T10:58:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -279,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -287,7 +303,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -311,7 +327,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/kubernetes-cluster-monitoring/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -319,7 +335,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/kubernetes-cluster-monitoring/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
         <lastmod>2017-11-20T10:58:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
