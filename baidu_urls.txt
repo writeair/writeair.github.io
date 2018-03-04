@@ -1,3 +1,3 @@
+http://www.huweihuang.com/article/kubernetes/understanding-kubernetes-objects/
 http://www.huweihuang.com/article/machine-learning/machine-learning-concept/
 http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/
-http://www.huweihuang.com/article/kubernetes/kubernetes-troubleshooting/

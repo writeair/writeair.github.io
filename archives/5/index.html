@@ -243,21 +243,17 @@ Docker......
 
 <div class="post-preview">
 
-    <a href="/article/docker/docker-commands-principle/">
+    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
         <h2 class="post-title">
-            [Docker] Docker常用命令原理图
+            [Docker] Docker源码分析（三）之Docker Server
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            docker常用命令原理图概览：
-
-（一）image layer（镜像层）
-镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
-
-根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
-只读层和读写层【top......
+            一、Docker Server创建流程
+Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
+Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
         </div>
     </a>
     
@@ -313,17 +309,55 @@ dockerfile指令分为构建指令和设置指令。
 
 <div class="post-preview">
 
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
+    <a href="/article/docker/docker-architecture/">
         <h2 class="post-title">
-            [Docker] Docker源码分析（三）之Docker Server
+            [Docker] Docker整体架构图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker Server创建流程
-Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
-Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
+            一、Docker的总架构图
+
+docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
+
+用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
+Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
+Engine执行Docker内部的一系列工作，每一项工作都是......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-07-09
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Docker" title="Docker">Docker</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/docker/docker-commands-principle/">
+        <h2 class="post-title">
+            [Docker] Docker常用命令原理图
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            docker常用命令原理图概览：
+
+（一）image layer（镜像层）
+镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
+
+根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
+只读层和读写层【top......
         </div>
     </a>
     
@@ -415,15 +449,15 @@ Flannel官网：https://github.com/coreos/flannel
             
         
             
-            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
-            
-        
-            
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="16">Kubernetes</a>
+            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
+            
+        
+            
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="17">Kubernetes</a>
             
         
             
@@ -501,6 +535,10 @@ Flannel官网：https://github.com/coreos/flannel
     <ul>
       
         <li>
+          <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
+        </li>
+      
+        <li>
           <a href="/article/machine-learning/machine-learning-concept/">[MachineLearning] 机器学习的概念</a>
         </li>
       
@@ -509,15 +547,11 @@ Flannel官网：https://github.com/coreos/flannel
         </li>
       
         <li>
-          <a href="/article/kubernetes/kubernetes-troubleshooting/">[Kubernetes] Kubernetes集群问题排查</a>
-        </li>
-      
-        <li>
           <a href="/article/kubernetes/kubernetes-architecture/">[Kubernetes] Kubernetes总架构图</a>
         </li>
       
         <li>
-          <a href="/article/kubernetes/paas-based-on-docker&kubernetes/">[Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台</a>
+          <a href="/article/kubernetes/kubernetes-troubleshooting/">[Kubernetes] Kubernetes集群问题排查</a>
         </li>
       
     </ul>
@@ -533,7 +567,7 @@ Flannel官网：https://github.com/coreos/flannel
     
         <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog 胡伟煌</a></li>
     
-        <li><a href="http://huweihuang.me/" target="_blank">huweihuang.me</a></li>
+        <li><a href="http://huweihuang.net/" target="_blank">huweihuang.net</a></li>
     
         <li><a href="http://dockone.io/people/胡伟煌" target="_blank">DockOne 胡伟煌</a></li>
     
@@ -546,7 +580,7 @@ Flannel官网：https://github.com/coreos/flannel
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
