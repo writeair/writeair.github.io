@@ -10,7 +10,7 @@
 
     <url>
         <loc>http://www.huweihuang.com/tags/Database/</loc>
-        <lastmod>2017-12-16T14:11:58.000Z</lastmod>
+        <lastmod>2017-12-16T14:11:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -60,6 +60,20 @@
     <url>
         <loc>http://www.huweihuang.com/tags/Kubernetes/</loc>
         <lastmod>2018-03-04T09:17:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Redis/</loc>
+        <lastmod>2018-04-18T02:04:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Arithmetic/</loc>
+        <lastmod>2018-04-18T04:36:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

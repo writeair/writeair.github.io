@@ -209,6 +209,153 @@
 
 <div class="post-preview">
 
+    <a href="/article/kubernetes/kubernetes-pod-introduction/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes之Pod详解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Pod的基本用法
+1.1. 说明
+
+Pod实际上是容器的集合，在k8s中对运行容器的要求为：容器的主程序需要一直在前台运行，而不是后台运行。应用可以改造成前台运行的方式，例如Go语言的程序，直接运行二进制文件；java语言则运行主类；tomcat程序可以写个运行脚本。或者通过supervisor的进程管理工具，即supervisor在前台运行，应用程序由supervisor管理在后台运......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-packages/">
+        <h2 class="post-title">
+            [Golang] Golang常用包
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、常用包
+
+
+
+常用包
+说明
+常用函数
+
+
+
+
+fmt
+实现格式化的输入输出操作，其中的fmt.Printf()和fmt.Println()是开发者使用最为频繁的函数。
+
+
+
+io
+实现了一系列非平台相关的IO相关接口和实现，比如提供了对os中系统相关的IO功能的封装。我们在进行流式读写（比如读写文件）时，通常会用到该包。
+
+
+
+bufio
+它在io的基础上提供了缓存功能。在具备了缓存功能......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-basis/">
+        <h2 class="post-title">
+            [Golang] Golang系列（一）之基础篇
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、初识Go语言
+（一）概述
+一个在语言层面实现了并发机制的类C通用型编程语言。
+（二）Go关键字（25个）
+
+
+
+类别
+关键字
+说明
+
+
+
+
+程序声明
+package，import
+包的声明和导入
+
+
+声明与定义
+var，const
+变量和常量的声明
+
+
+
+type
+用于定义类型
+
+
+复合数据类型
+struct
+定义结构体，类似java中的class
+
+
+
+interface
+定义接口
+
+......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/golang/golang-object-oriented-programming/">
         <h2 class="post-title">
             [Golang] Golang系列（二）之面向对象编程
@@ -509,108 +656,6 @@ h......
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/python/basics/python-basics/">
-        <h2 class="post-title">
-            [Python] Python系列（一）之基础篇
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 数据类型和变量
-​	Python使用缩进来组织代码块，一般使用4个空格的缩进。使用#来注释一行，其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块。Python对大小写敏感。
-1.1 整数
-​	Python可以处理任意大小的整数，包括负整数，写法与数学上写法一致，例如：-100。如果用十六进制表示，则用前缀为0x和0-9，a-f表示，例如：0xff00。
-1.2 浮点数......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-test/">
-        <h2 class="post-title">
-            [Golang] Golang测试用例
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Go中的测试框架
-Go语言中自带有一个轻量级的测试框架testing和自带的go test命令来实现单元测试和性能测试，testing框架和其他语言中的测试框架类似，你可以基于这个框架写针对相应函数的测试用例，也可以基于该框架写相应的压力测试用例。
-2. 单元测试原则
-
-文件名必须是_test.go结尾的，这样在执行go test的时候才会执行到相应的代码
-你必须import test......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-gdb-debug/">
-        <h2 class="post-title">
-            [Golang] Golang之GDB调试
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. GDB简介
-GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程序调试工具。使用GDB可以做如下事情：
-
-启动程序，可以按照开发者的自定义要求运行程序。
-可让被调试的程序在开发者设定的调置的断点处停住。（断点可以是条件表达式）
-当程序被停住时，可以检查此时程序中所发生的事。
-动态的改变当前程序的执行环境。
-
-目前支持调试Go程序的GDB版本必须大于7.1。
-编译Go程序......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -651,11 +696,9 @@ GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程�
     <div class="tags">
         
             
-            <a href="/tags/#Database" title="Database" rel="2">Database</a>
+            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
             
         
-            
-            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
             
         
             
@@ -678,6 +721,12 @@ GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程�
         
             
             <a href="/tags/#Python" title="Python" rel="4">Python</a>
+            
+        
+            
+        
+            
+            <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
             
         
     </div>
@@ -741,23 +790,23 @@ GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程�
     <ul>
       
         <li>
+          <a href="/article/arithmetic/data-structure-overview/">[Arithmetic] 数据结构概述</a>
+        </li>
+      
+        <li>
+          <a href="/article/redis/redis-cluster/">[Redis] Redis集群模式部署</a>
+        </li>
+      
+        <li>
+          <a href="/article/redis/redis-sentinel/">[Redis] Redis哨兵模式部署</a>
+        </li>
+      
+        <li>
           <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
         </li>
       
         <li>
           <a href="/article/machine-learning/machine-learning-concept/">[MachineLearning] 机器学习的概念</a>
-        </li>
-      
-        <li>
-          <a href="/article/source-analysis/client-go-source-analysis/">[SourceAnalysis] client-go的使用及源码分析</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-architecture/">[Kubernetes] Kubernetes总架构图</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-troubleshooting/">[Kubernetes] Kubernetes集群问题排查</a>
         </li>
       
     </ul>
@@ -786,7 +835,7 @@ GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程�
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>

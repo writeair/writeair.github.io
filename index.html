@@ -209,6 +209,109 @@
 
 <div class="post-preview">
 
+    <a href="/article/arithmetic/data-structure-overview/">
+        <h2 class="post-title">
+            [Arithmetic] 数据结构概述
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 数据结构的基本概念
+“数据结构”是研究各种数据的特性以及数据之间存在的关系，进而根据实际应用的要求，合理地组织和存储数据，设计出相应的算法。
+数据是对客观事物的符号表示，
+
+数据元素（节点）：数据的基本单位，在程序中通常作为一个整体进行考虑和处理。一个数据元素可以由若干个数据项组成。
+数据项：具有独立含义的最小标识单位。例如，一条数据记录可以称为一个数据元素，数据记录的某个字段就是一个......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-04-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Arithmetic" title="Arithmetic">Arithmetic</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/redis/redis-cluster/">
+        <h2 class="post-title">
+            [Redis] Redis集群模式部署
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Redis部署
+
+以下以Linux系统为例
+
+1.1 下载和编译
+1234$ wget http://download.redis.io/releases/redis-4.0.7.tar.gz$ tar xzf redis-4.0.7.tar.gz$ cd redis-4.0.7$ make
+编译完成后会在src目录下生成Redis服务端程序redis-server和客户端程序redi......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-04-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Redis" title="Redis">Redis</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/redis/redis-sentinel/">
+        <h2 class="post-title">
+            [Redis] Redis哨兵模式部署
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 部署Redis集群
+redis的安装及配置参考[redis部署]
+
+本文以创建一主二从的集群为例。
+
+1.1 部署与配置
+先创建sentinel目录，在该目录下创建8000，8001，8002三个以端口号命名的目录。
+123mkdir sentinelcd sentinelmkdir 8000 8001 8002
+在对应端口号目录中创建redis.conf的文件，配置文件中的端口号po......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-04-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Redis" title="Redis">Redis</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/kubernetes/understanding-kubernetes-objects/">
         <h2 class="post-title">
             [Kubernetes] 理解kubernetes对象
@@ -310,24 +413,20 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-architecture/">
+    <a href="/article/kubernetes/kubernetes-troubleshooting/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes总架构图
+            [Kubernetes] Kubernetes集群问题排查
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. Kubernetes的总架构图
+            1. 查看系统Event事件
+ 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
+该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
 
-2. Kubernetes各个组件介绍
-2.1 kube-master[控制节点]
-master的工作流程图
-
-
-Kubecfg将特定的请求，比如创建Pod，发送给Kubernetes Client。
-Kubernetes Client将请求发送给API server。
-API Server根据请求的类型，比如创建Pod时storage类型是pods，......
+没有可用的Node可调度
+开启了资源配额管理并......
         </div>
     </a>
     
@@ -347,20 +446,24 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-troubleshooting/">
+    <a href="/article/kubernetes/kubernetes-architecture/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes集群问题排查
+            [Kubernetes] Kubernetes总架构图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. 查看系统Event事件
- 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
-该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
+            1. Kubernetes的总架构图
 
-没有可用的Node可调度
-开启了资源配额管理并......
+2. Kubernetes各个组件介绍
+2.1 kube-master[控制节点]
+master的工作流程图
+
+
+Kubecfg将特定的请求，比如创建Pod，发送给Kubernetes Client。
+Kubernetes Client将请求发送给API server。
+API Server根据请求的类型，比如创建Pod时storage类型是pods，......
         </div>
     </a>
     
@@ -442,153 +545,6 @@ kubernetes API Server的功能：
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/golang/golang-packages/">
-        <h2 class="post-title">
-            [Golang] Golang常用包
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、常用包
-
-
-
-常用包
-说明
-常用函数
-
-
-
-
-fmt
-实现格式化的输入输出操作，其中的fmt.Printf()和fmt.Println()是开发者使用最为频繁的函数。
-
-
-
-io
-实现了一系列非平台相关的IO相关接口和实现，比如提供了对os中系统相关的IO功能的封装。我们在进行流式读写（比如读写文件）时，通常会用到该包。
-
-
-
-bufio
-它在io的基础上提供了缓存功能。在具备了缓存功能......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-17
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/kubernetes-pod-introduction/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes之Pod详解
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Pod的基本用法
-1.1. 说明
-
-Pod实际上是容器的集合，在k8s中对运行容器的要求为：容器的主程序需要一直在前台运行，而不是后台运行。应用可以改造成前台运行的方式，例如Go语言的程序，直接运行二进制文件；java语言则运行主类；tomcat程序可以写个运行脚本。或者通过supervisor的进程管理工具，即supervisor在前台运行，应用程序由supervisor管理在后台运......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-17
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-basis/">
-        <h2 class="post-title">
-            [Golang] Golang系列（一）之基础篇
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、初识Go语言
-（一）概述
-一个在语言层面实现了并发机制的类C通用型编程语言。
-（二）Go关键字（25个）
-
-
-
-类别
-关键字
-说明
-
-
-
-
-程序声明
-package，import
-包的声明和导入
-
-
-声明与定义
-var，const
-变量和常量的声明
-
-
-
-type
-用于定义类型
-
-
-复合数据类型
-struct
-定义结构体，类似java中的class
-
-
-
-interface
-定义接口
-
-......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -625,11 +581,9 @@ interface
     <div class="tags">
         
             
-            <a href="/tags/#Database" title="Database" rel="2">Database</a>
+            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
             
         
-            
-            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
             
         
             
@@ -652,6 +606,12 @@ interface
         
             
             <a href="/tags/#Python" title="Python" rel="4">Python</a>
+            
+        
+            
+        
+            
+            <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
             
         
     </div>
@@ -715,23 +675,23 @@ interface
     <ul>
       
         <li>
+          <a href="/article/arithmetic/data-structure-overview/">[Arithmetic] 数据结构概述</a>
+        </li>
+      
+        <li>
+          <a href="/article/redis/redis-cluster/">[Redis] Redis集群模式部署</a>
+        </li>
+      
+        <li>
+          <a href="/article/redis/redis-sentinel/">[Redis] Redis哨兵模式部署</a>
+        </li>
+      
+        <li>
           <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
         </li>
       
         <li>
           <a href="/article/machine-learning/machine-learning-concept/">[MachineLearning] 机器学习的概念</a>
-        </li>
-      
-        <li>
-          <a href="/article/source-analysis/client-go-source-analysis/">[SourceAnalysis] client-go的使用及源码分析</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-architecture/">[Kubernetes] Kubernetes总架构图</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-troubleshooting/">[Kubernetes] Kubernetes集群问题排查</a>
         </li>
       
     </ul>
@@ -760,7 +720,7 @@ interface
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
