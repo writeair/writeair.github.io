@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://ozilwgpje.bkt.clouddn.com/tag.png')
+            background-image: url('http://ozilwgpje.bkt.clouddn.com/scenery/bridge.jpg')
             /*page*/
         
     }
@@ -196,9 +196,11 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                    <a href="#Docker" title="Docker" rel="6">Docker</a>
+                    <a href="#Arithmetic" title="Arithmetic" rel="1">Arithmetic</a>
                 
                     <a href="#Database" title="Database" rel="1">Database</a>
+                
+                    <a href="#Docker" title="Docker" rel="6">Docker</a>
                 
                     <a href="#Etcd" title="Etcd" rel="3">Etcd</a>
                 
@@ -206,22 +208,64 @@
                 
                     <a href="#Golang" title="Golang" rel="11">Golang</a>
                 
+                    <a href="#MachineLearning" title="MachineLearning" rel="1">MachineLearning</a>
+                
                     <a href="#Nginx" title="Nginx" rel="1">Nginx</a>
                 
-                    <a href="#MachineLearning" title="MachineLearning" rel="1">MachineLearning</a>
+                    <a href="#Redis" title="Redis" rel="3">Redis</a>
                 
                     <a href="#SourceAnalysis" title="SourceAnalysis" rel="1">SourceAnalysis</a>
                 
                     <a href="#Python" title="Python" rel="4">Python</a>
                 
-                    <a href="#Arithmetic" title="Arithmetic" rel="1">Arithmetic</a>
-                
-                    <a href="#Redis" title="Redis" rel="3">Redis</a>
-                
             </div>
 
             <!-- 标签列表 -->
 
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Arithmetic">
+                    <span class="tag-text">Arithmetic</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/arithmetic/data-structure-overview/">
+                        <h2 class="post-title">
+                            [Arithmetic] 数据结构概述
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Database">
+                    <span class="tag-text">Database</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/database/mysql-commonds/">
+                        <h2 class="post-title">
+                            [Database] Mysql常用命令
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Docker">
@@ -278,9 +322,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
+                     <a href="/article/docker/code-analysis/code-analysis-of-docker-client/">
                         <h2 class="post-title">
-                            [Docker] Docker源码分析（三）之Docker Server
+                            [Docker] Docker源码分析（一）之Docker Client
                         </h2>
                         
                     </a>
@@ -293,9 +337,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/docker/code-analysis/code-analysis-of-docker-client/">
+                     <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
                         <h2 class="post-title">
-                            [Docker] Docker源码分析（一）之Docker Client
+                            [Docker] Docker源码分析（三）之Docker Server
                         </h2>
                         
                     </a>
@@ -321,28 +365,6 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Database">
-                    <span class="tag-text">Database</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/database/mysql-commonds/">
-                        <h2 class="post-title">
-                            [Database] Mysql常用命令
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Etcd">
                     <span class="tag-text">Etcd</span>
                 </span>
@@ -352,9 +374,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/etcd/etcd-auth&security/">
+                     <a href="/article/etcd/etcd-commands/">
                         <h2 class="post-title">
-                            [Etcd] Etcd访问控制
+                            [Etcd] Etcd常用命令
                         </h2>
                         
                     </a>
@@ -367,9 +389,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/etcd/etcd-commands/">
+                     <a href="/article/etcd/etcd-auth&security/">
                         <h2 class="post-title">
-                            [Etcd] Etcd常用命令
+                            [Etcd] Etcd访问控制
                         </h2>
                         
                     </a>
@@ -494,6 +516,21 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
+                     <a href="/article/kubernetes/kubernetes-troubleshooting/">
+                        <h2 class="post-title">
+                            [Kubernetes] Kubernetes集群问题排查
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
                      <a href="/article/kubernetes/understanding-kubernetes-objects/">
                         <h2 class="post-title">
                             [Kubernetes] 理解kubernetes对象
@@ -512,21 +549,6 @@
                      <a href="/article/kubernetes/paas-based-on-docker&kubernetes/">
                         <h2 class="post-title">
                             [Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/kubernetes/kubernetes-troubleshooting/">
-                        <h2 class="post-title">
-                            [Kubernetes] Kubernetes集群问题排查
                         </h2>
                         
                     </a>
@@ -569,21 +591,6 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/">
-                        <h2 class="post-title">
-                            [Kubernetes] Kubernetes核心原理（四）之kubelet
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
                      <a href="/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/">
                         <h2 class="post-title">
                             [Kubernetes] Kubernetes核心原理（三）之Scheduler
@@ -599,9 +606,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/kubernetes/monitoring/influxdb-introduction/">
+                     <a href="/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/">
                         <h2 class="post-title">
-                            [Kubernetes] Influxdb介绍
+                            [Kubernetes] Kubernetes核心原理（四）之kubelet
                         </h2>
                         
                     </a>
@@ -617,6 +624,21 @@
                      <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
                         <h2 class="post-title">
                             [Kubernetes] cAdvisor介绍
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/kubernetes/monitoring/influxdb-introduction/">
+                        <h2 class="post-title">
+                            [Kubernetes] Influxdb介绍
                         </h2>
                         
                     </a>
@@ -666,9 +688,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/golang/golang-concurrent-programming/">
+                     <a href="/article/golang/golang-basis/">
                         <h2 class="post-title">
-                            [Golang] Golang系列（三）之并发编程
+                            [Golang] Golang系列（一）之基础篇
                         </h2>
                         
                     </a>
@@ -681,9 +703,9 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/golang/golang-basis/">
+                     <a href="/article/golang/golang-concurrent-programming/">
                         <h2 class="post-title">
-                            [Golang] Golang系列（一）之基础篇
+                            [Golang] Golang系列（三）之并发编程
                         </h2>
                         
                     </a>
@@ -726,21 +748,6 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/golang/golang-packages/">
-                        <h2 class="post-title">
-                            [Golang] Golang常用包
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
                      <a href="/article/golang/golang-test/">
                         <h2 class="post-title">
                             [Golang] Golang测试用例
@@ -759,6 +766,21 @@
                      <a href="/article/golang/golang-pointer/">
                         <h2 class="post-title">
                             [Golang] Go语言指针详解
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/golang/golang-packages/">
+                        <h2 class="post-title">
+                            [Golang] Golang常用包
                         </h2>
                         
                     </a>
@@ -829,6 +851,28 @@
             </div>
             
             <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="MachineLearning">
+                    <span class="tag-text">MachineLearning</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/machine-learning/machine-learning-concept/">
+                        <h2 class="post-title">
+                            [MachineLearning] 机器学习的概念
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="Nginx">
                     <span class="tag-text">Nginx</span>
                 </span>
@@ -851,8 +895,8 @@
             </div>
             
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="MachineLearning">
-                    <span class="tag-text">MachineLearning</span>
+                <span class="fa fa-tag listing-seperator" id="Redis">
+                    <span class="tag-text">Redis</span>
                 </span>
                 
                   <!-- <li class="listing-item">
@@ -860,9 +904,39 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/machine-learning/machine-learning-concept/">
+                     <a href="/article/redis/redis-introduction/">
                         <h2 class="post-title">
-                            [MachineLearning] 机器学习的概念
+                            [Redis] Redis介绍
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/redis/redis-cluster/">
+                        <h2 class="post-title">
+                            [Redis] Redis集群模式部署
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/article/redis/redis-sentinel/">
+                        <h2 class="post-title">
+                            [Redis] Redis哨兵模式部署
                         </h2>
                         
                     </a>
@@ -919,21 +993,6 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/python/basics/python-object-oriented-programming/">
-                        <h2 class="post-title">
-                            [Python] Python系列（四）之面向对象编程
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
                      <a href="/article/python/basics/python-basics/">
                         <h2 class="post-title">
                             [Python] Python系列（一）之基础篇
@@ -959,73 +1018,14 @@
                 </div>
                 <hr>
                 
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Arithmetic">
-                    <span class="tag-text">Arithmetic</span>
-                </span>
-                
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
                  <div class="post-preview">
-                     <a href="/article/arithmetic/data-structure-overview/">
+                     <a href="/article/python/basics/python-object-oriented-programming/">
                         <h2 class="post-title">
-                            [Arithmetic] 数据结构概述
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Redis">
-                    <span class="tag-text">Redis</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/redis/redis-cluster/">
-                        <h2 class="post-title">
-                            [Redis] Redis集群模式部署
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/redis/redis-introduction/">
-                        <h2 class="post-title">
-                            [Redis] Redis介绍
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/redis/redis-sentinel/">
-                        <h2 class="post-title">
-                            [Redis] Redis哨兵模式部署
+                            [Python] Python系列（四）之面向对象编程
                         </h2>
                         
                     </a>
