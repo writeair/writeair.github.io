@@ -260,14 +260,14 @@
 <p>访问任意一台Node机器的30080端口。</p>
 <h2 id="4-容器化部署">4. 容器化部署</h2>
 <h3 id="41-拉取镜像">4.1. 拉取镜像</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.wae.haplat.net/test/influxdb:1.0.0</span><br><span class="line">docker pull registry.wae.haplat.net/test/cadvisor:latest</span><br><span class="line">docker pull registry.wae.haplat.net/test/grafana:latest</span><br><span class="line">docker pull registry.wae.haplat.net/test/heapster:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull influxdb:latest</span><br><span class="line">docker pull cadvisor:latest</span><br><span class="line">docker pull grafana:latest</span><br><span class="line">docker pull heapster:latest</span><br></pre></td></tr></table></figure>
 <h3 id="42-运行容器">4.2. 运行容器</h3>
 <h4 id="421-influxdb">4.2.1. influxdb</h4>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>influxdb</span><br><span class="line">docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --volume=/opt/data/influxdb:/data --name influxsrv registry.wae.haplat.net/test/influxdb:1.0.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>influxdb</span><br><span class="line">docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --volume=/opt/data/influxdb:/data --name influxsrv influxdb:latest</span><br></pre></td></tr></table></figure>
 <h4 id="422-cadvisor">4.2.2. cadvisor</h4>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>cadvisor</span><br><span class="line">docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8080:8080 --detach=true --link influxsrv:influxsrv --name=cadvisor registry.wae.haplat.net/test/cadvisor:latest -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>cadvisor</span><br><span class="line">docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8080:8080 --detach=true --link influxsrv:influxsrv --name=cadvisor cadvisor:latest -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086</span><br></pre></td></tr></table></figure>
 <h4 id="423-grafana">4.2.3. grafana</h4>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>grafana</span><br><span class="line">docker run -d -p 3000:3000 -e INFLUXDB_HOST=influxsrv -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=cadvisor -e INFLUXDB_USER=root -e INFLUXDB_PASS=root --link influxsrv:influxsrv --name grafana registry.wae.haplat.net/test/grafana:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>grafana</span><br><span class="line">docker run -d -p 3000:3000 -e INFLUXDB_HOST=influxsrv -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=cadvisor -e INFLUXDB_USER=root -e INFLUXDB_PASS=root --link influxsrv:influxsrv --name grafana grafana:latest</span><br></pre></td></tr></table></figure>
 <h4 id="424-heapster">4.2.4. heapster</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8082:8082 --net=host heapster:canary --source=kubernetes:http://`k8s-server-ip`:8080?inClusterConfig=false/&amp;useServiceAccount=false --sink=influxdb:http://`influxdb-ip`:8086</span><br></pre></td></tr></table></figure>
 <h3 id="43-访问">4.3. 访问</h3>
@@ -280,12 +280,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/kubernetes/monitoring/cadvisor-introduction/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] cAdvisor介绍">&larr; Previous Post</a>
+                            <a href="/article/kubernetes/kubernetes-commands/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Kubernetes常用命令">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/kubernetes/kubernetes-commands/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Kubernetes常用命令">Next Post &rarr;</a>
+                            <a href="/article/kubernetes/monitoring/cadvisor-introduction/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] cAdvisor介绍">Next Post &rarr;</a>
                         </li>
                     
                 </ul>

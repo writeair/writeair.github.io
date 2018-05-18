@@ -272,6 +272,40 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
 
 <div class="post-preview">
 
+    <a href="/article/docker/code-analysis/code-analysis-of-docker-client/">
+        <h2 class="post-title">
+            [Docker] Docker源码分析（一）之Docker Client
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、创建Docker Client
+​    Docker是一个client/server的架构，通过二进制文件docker创建Docker客户端将请求类型与参数发送给Docker Server，Docker Server具体执行命令调用。
+Docker Client运行流程图如下：
+
+说明：本文分析的代码为Docker 1.2.0版本。
+（一）Docker命令flag参数解析
+Docker......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-07-09
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Docker" title="Docker">Docker</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/docker/dockerfile-usage/">
         <h2 class="post-title">
             [Docker] Dockerfile使用说明
@@ -308,87 +342,17 @@ dockerfile指令分为构建指令和设置指令。
 
 <div class="post-preview">
 
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-daemon/">
+    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
         <h2 class="post-title">
-            [Docker] Docker源码分析（二）之Docker Daemon
+            [Docker] Docker源码分析（三）之Docker Server
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker Daemon架构示意图
-
-Docker Daemon是Docker架构中运行在后台的守护进程，大致可以分为Docker Server、Engine和Job三部分。
-Docker Daemon可以认为是通过Docker Server模块接受Docker Client的请求，并在Engine中处理请求，然后根据请求类型，创建出指定的Job并运行。
-运行过程的作用有以下几种可能：......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Docker" title="Docker">Docker</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-client/">
-        <h2 class="post-title">
-            [Docker] Docker源码分析（一）之Docker Client
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、创建Docker Client
-​    Docker是一个client/server的架构，通过二进制文件docker创建Docker客户端将请求类型与参数发送给Docker Server，Docker Server具体执行命令调用。
-Docker Client运行流程图如下：
-
-说明：本文分析的代码为Docker 1.2.0版本。
-（一）Docker命令flag参数解析
-Docker......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Docker" title="Docker">Docker</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/docker/docker-architecture/">
-        <h2 class="post-title">
-            [Docker] Docker整体架构图
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、Docker的总架构图
-
-docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
-
-用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
-Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
-Engine执行Docker内部的一系列工作，每一项工作都是......
+            一、Docker Server创建流程
+Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
+Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
         </div>
     </a>
     
@@ -442,17 +406,53 @@ Engine执行Docker内部的一系列工作，每一项工作都是......
 
 <div class="post-preview">
 
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
+    <a href="/article/docker/docker-architecture/">
         <h2 class="post-title">
-            [Docker] Docker源码分析（三）之Docker Server
+            [Docker] Docker整体架构图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker Server创建流程
-Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
-Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
+            一、Docker的总架构图
+
+docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
+
+用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
+Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
+Engine执行Docker内部的一系列工作，每一项工作都是......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-07-09
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Docker" title="Docker">Docker</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/docker/code-analysis/code-analysis-of-docker-daemon/">
+        <h2 class="post-title">
+            [Docker] Docker源码分析（二）之Docker Daemon
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、Docker Daemon架构示意图
+
+Docker Daemon是Docker架构中运行在后台的守护进程，大致可以分为Docker Server、Engine和Job三部分。
+Docker Daemon可以认为是通过Docker Server模块接受Docker Client的请求，并在Engine中处理请求，然后根据请求类型，创建出指定的Job并运行。
+运行过程的作用有以下几种可能：......
         </div>
     </a>
     

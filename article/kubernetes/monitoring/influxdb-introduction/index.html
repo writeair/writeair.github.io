@@ -226,7 +226,7 @@
 <p><a href="http://xn--IP-fr5c86lx7z:8083" target="_blank" rel="noopener">http://服务器IP:8083</a></p>
 <h3 id="4docker-image方式安装">4）docker image方式安装</h3>
 <p>docker pull influxdb</p>
-<p>docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --volume=/opt/data/influxdb:/data --name influxsrv <a href="http://registry.wae.haplat.net/test/influxdb:1.0.0" target="_blank" rel="noopener">registry.wae.haplat.net/test/influxdb:1.0.0</a></p>
+<p>docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --volume=/opt/data/influxdb:/data --name influxsrv influxdb:latest</p>
 <h2 id="3-influxdb的基本概念">3. InfluxDB的基本概念</h2>
 <h3 id="31-与传统数据库中的名词做比较">3.1. 与传统数据库中的名词做比较</h3>
 <table>
@@ -357,12 +357,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/kubernetes/kubernetes-basic-concepts/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Kubernetes基本概念">&larr; Previous Post</a>
+                            <a href="/article/kubernetes/monitoring/heapster-introduction/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Heapster介绍">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/kubernetes/monitoring/cadvisor-introduction/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] cAdvisor介绍">Next Post &rarr;</a>
+                            <a href="/article/redis/redis-introduction/" data-toggle="tooltip" data-placement="top" title="[Redis] Redis介绍">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
