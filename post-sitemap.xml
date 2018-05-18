@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/flannel/flannel-introduction/</loc>
+        <lastmod>2018-05-18T12:06:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-troubleshooting/</loc>
+        <lastmod>2018-05-18T12:06:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
         <lastmod>2018-05-18T11:59:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +33,6 @@
     <url>
         <loc>http://www.huweihuang.com/article/nginx/nginx-deploy&config/</loc>
         <lastmod>2018-05-18T11:58:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-troubleshooting/</loc>
-        <lastmod>2018-05-18T11:56:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -345,14 +353,6 @@
     <url>
         <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-daemon/</loc>
         <lastmod>2017-12-16T14:15:36.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/flannel/flannel-introduction/</loc>
-        <lastmod>2017-12-16T14:14:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

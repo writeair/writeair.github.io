@@ -274,22 +274,16 @@ Go语言中自带有一个轻量级的测试框架testing和自带的go test命�
 
 <div class="post-preview">
 
-    <a href="/article/golang/beego/beego-introduction/">
+    <a href="/article/golang/web-programming/golang-http-execution-flow/">
         <h2 class="post-title">
-            [Golang] beego介绍
+            [Golang] GO HTTP执行流程
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. beego的使用
-1.1. beego的安装
-1go get github.com/astaxie/beego
-1.2. beego的升级
-1、直接升级
-1go get -u github.com/astaxie/beego
-2、源码下载升级
-用户访问 https://github.com/astaxie/beego ,下载源码，然后覆盖到 $GOPATH/src/github.com......
+            1. http包建立web服务器
+1234567891011121314151617181920212223242526package mainimport (    "fmt"    "log"    "net/http"    "strings")func sayhelloName(w http.ResponseWriter, r *http.Request) &#123;    r.P......
         </div>
     </a>
     
@@ -327,35 +321,6 @@ GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程�
 
 目前支持调试Go程序的GDB版本必须大于7.1。
 编译Go程序......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/web-programming/golang-http-execution-flow/">
-        <h2 class="post-title">
-            [Golang] GO HTTP执行流程
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. http包建立web服务器
-1234567891011121314151617181920212223242526package mainimport (    "fmt"    "log"    "net/http"    "strings")func sayhelloName(w http.ResponseWriter, r *http.Request) &#123;    r.P......
         </div>
     </a>
     
@@ -419,6 +384,41 @@ JSON是一种轻量级的数据交换语言。
 1.1.1. Unmarshal源码
 /src/encoding/json/decode.go
 1234567891011121314151617181920212223242526272829303132func Unmarshal......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/beego/beego-introduction/">
+        <h2 class="post-title">
+            [Golang] beego介绍
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. beego的使用
+1.1. beego的安装
+1go get github.com/astaxie/beego
+1.2. beego的升级
+1、直接升级
+1go get -u github.com/astaxie/beego
+2、源码下载升级
+用户访问 https://github.com/astaxie/beego ,下载源码，然后覆盖到 $GOPATH/src/github.com......
         </div>
     </a>
     
