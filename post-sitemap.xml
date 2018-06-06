@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/linux/supervisor-usage/</loc>
+        <lastmod>2018-06-06T13:07:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/flannel/flannel-introduction/</loc>
         <lastmod>2018-05-18T12:06:34.000Z</lastmod>
         <changefreq>weekly</changefreq>

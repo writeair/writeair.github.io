@@ -1,3 +1,3 @@
+http://www.huweihuang.com/article/linux/supervisor-usage/
 http://www.huweihuang.com/article/arithmetic/data-structure-overview/
 http://www.huweihuang.com/article/redis/redis-cluster/
-http://www.huweihuang.com/article/redis/redis-sentinel/

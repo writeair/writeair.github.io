@@ -209,6 +209,36 @@
 
 <div class="post-preview">
 
+    <a href="/article/linux/supervisor-usage/">
+        <h2 class="post-title">
+            [Linux] Supervisor的使用
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Supervisor简介
+Supervisord 是用 Python 实现的一款的进程管理工具，supervisord 要求管理的程序是非 daemon 程序，supervisord 会帮你把它转成 daemon 程序，因此如果用 supervisord 来管理进程，进程需要以非daemon的方式启动。
+例如：管理nginx 的话，必须在 nginx 的配置文件里添加一行设置 daem......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-06
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Linux" title="Linux">Linux</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/arithmetic/data-structure-overview/">
         <h2 class="post-title">
             [Arithmetic] 数据结构概述
@@ -512,39 +542,6 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-api-server/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes核心原理（一）之API Server
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. API Server简介
-k8s API Server提供了k8s各类资源对象（pod,RC,Service等）的增删改查及watch等HTTP Rest接口，是整个系统的数据总线和数据中心。
-kubernetes API Server的功能：
-
-提供了集群管理的REST API接口(包括认证授权、数据校验以及集群状态变更)；
-提供其他模块之间的数据交互和通信的枢纽（其他模块通过API......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-18
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -583,13 +580,13 @@ kubernetes API Server的功能：
             
         
             
-        
-            
             <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
             
         
             
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
+            
+        
             
         
             
@@ -612,6 +609,8 @@ kubernetes API Server的功能：
         
             
             <a href="/tags/#Python" title="Python" rel="4">Python</a>
+            
+        
             
         
     </div>
@@ -675,6 +674,10 @@ kubernetes API Server的功能：
     <ul>
       
         <li>
+          <a href="/article/linux/supervisor-usage/">[Linux] Supervisor的使用</a>
+        </li>
+      
+        <li>
           <a href="/article/arithmetic/data-structure-overview/">[Arithmetic] 数据结构概述</a>
         </li>
       
@@ -688,10 +691,6 @@ kubernetes API Server的功能：
       
         <li>
           <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
-        </li>
-      
-        <li>
-          <a href="/article/machine-learning/machine-learning-concept/">[MachineLearning] 机器学习的概念</a>
         </li>
       
     </ul>
@@ -720,7 +719,7 @@ kubernetes API Server的功能：
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
