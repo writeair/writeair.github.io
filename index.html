@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://ozilwgpje.bkt.clouddn.com/scenery/city.jpg') 
+            background-image: url('http://ozilwgpje.bkt.clouddn.com/blog/home.jpg?imageslim') 
             /*config*/
         
     }
@@ -206,6 +206,174 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/article/blockchain/blockchain-introduction/">
+        <h2 class="post-title">
+            [Blockchain] 区块链系列（八）之区块链介绍
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 区块链简介
+1.1. 区块链的概念
+区块链是一个去中心化的分布式数据库，该数据库由一串使用密码学方法产生的数据区块有序链接而成，区块中包含有一定时间内产生的无法被篡改的数据记录信息。
+区块中包含了数据记录、当前区块根Hash、前一个区块根Hash、时间戳以及其他信息。数据记录的类型可以根据场景决定，比如为资产交易记录、资产发行记录等。
+从技术层面看，区块链是一个基于共识机制、去中心化的......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-07-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Blockchain" title="Blockchain">Blockchain</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/blockchain/blockchain-transactions/">
+        <h2 class="post-title">
+            [Blockchain] 区块链系列（六）之比特币交易
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 比特币交易简介
+比特币交易是比特币系统最重要的部分，本质是数据结构，数据结构中含有比特币交易参与者价值转移的相关信息。比特币区块链是一本全球复制记账总账簿，每个比特币交易即账簿上公开的一页转账记录。
+2. 比特币交易的生命周期
+
+创建比特币交易，通过一个或多个签名加密，签名标志了该比特币的使用许可。
+交易广播到比特币网络中，每个节点进行验证，并进行广播，直到该交易被大多数节点接收。
+比......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Blockchain" title="Blockchain">Blockchain</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/blockchain/blockchain-keys&addresses/">
+        <h2 class="post-title">
+            [Blockchain] 区块链系列（四）之密钥和地址
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 比特币密钥
+比特币的所有权是通过数字密钥、比特币地址和数字签名来确定的，数字密钥不存在网络中，而由用户生成，存储在一个文件或简单的数据库中，一般称之为钱包。
+比特币交易都需要一个有效的签名才会被存储到区块链中，只有有效的密钥才能产生有效的数字签名，因此拥有密钥副本就拥有了该账户的比特币控制权。
+密钥是成对出现的，由公钥和私钥组成。公钥类似银行账号，私钥类似支票签名。在比特币交易环节， ......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Blockchain" title="Blockchain">Blockchain</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-resource/">
+        <h2 class="post-title">
+            [Kubernetes] kubernetes资源配额详解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 资源配额（ResourceQuota）
+ResourceQuota对象用来定义某个命名空间下所有资源的使用限额，其实包括：
+
+计算资源的配额
+存储资源的配额
+对象数量的配额
+
+如果集群的总容量小于命名空间的配额总额，可能会产生资源竞争。这时会按照先到先得来处理。
+资源竞争和配额的更新都不会影响已经创建好的资源。
+1.1. 启动资源配额
+Kubernetes 的众多发行版本默认开启了资源......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/nodeselector-and-taint/">
+        <h2 class="post-title">
+            [Kubernetes] kubernetes指定节点调度与隔离
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. NodeSelector
+1.1. 概念
+如果需要限制Pod到指定的Node上运行，则可以给Node打标签并给Pod配置NodeSelector。
+1.2. 使用方式
+1.2.1. 给Node打标签
+12345678910# get node的namekubectl get nodes# 设置Labelkubectl label nodes &lt;node-name&gt; &lt;......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-23
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -377,171 +545,6 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/machine-learning/machine-learning-concept/">
-        <h2 class="post-title">
-            [MachineLearning] 机器学习的概念
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 机器学习的概念
-1.1 Arthur Samuel的定义
-​	机器学习是在特定的编程环境下，给予机器学习能力的领域。
-1.2 Tom Mitchell的定义
-​	机器学习是指一个程序被认为能从经验 E 中学习，解决任务 T，达到性能度量值P，当且仅当，有了经验 E 后，经过 P 评判，程序在处理 T 时的性能有所提升。
-1.3 例子
-​	例如下棋程序经过自己与自己的下棋练习，最后棋力大......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2018-01-06
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#MachineLearning" title="MachineLearning">MachineLearning</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/source-analysis/client-go-source-analysis/">
-        <h2 class="post-title">
-            [SourceAnalysis] client-go的使用及源码分析
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. client-go简介
-1.1 client-go说明
-​	client-go是一个调用kubernetes集群资源对象API的客户端，即通过client-go实现对kubernetes集群中资源对象（包括deployment、service、ingress、replicaSet、pod、namespace、node等）的增删改查等操作。大部分对kubernetes进行前置API封装的......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-12-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#SourceAnalysis" title="SourceAnalysis">SourceAnalysis</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/kubernetes-troubleshooting/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes集群问题排查
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 查看系统Event事件
- 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
-该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
-
-没有可用的Node可调度
-开启了资源配额管理并......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-20
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/kubernetes-architecture/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes总架构图
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Kubernetes的总架构图
-
-2. Kubernetes各个组件介绍
-2.1 kube-master[控制节点]
-master的工作流程图
-
-
-Kubecfg将特定的请求，比如创建Pod，发送给Kubernetes Client。
-Kubernetes Client将请求发送给API server。
-API Server根据请求的类型，比如创建Pod时storage类型是pods，......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-20
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/paas-based-on-docker&kubernetes/">
-        <h2 class="post-title">
-            [Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            [编者的话]
-目前很多的容器云平台通过Docker及Kubernetes等技术提供应用运行平台，从而实现运维自动化，快速部署应用、弹性伸缩和动态调整应用环境资源，提高研发运营效率。
-从宏观到微观（从抽象到具体）的思路来理解：云计算→PaaS→ App Engine→XAE[XXX App Engine] （XAE泛指一类应用运行平台，例如GAE、SAE、BAE等）。
-本文简要介绍了与容器云相......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-19
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -580,6 +583,10 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
             
         
             
+            <a href="/tags/#Blockchain" title="Blockchain" rel="3">Blockchain</a>
+            
+        
+            
         
             
             <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
@@ -590,21 +597,21 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="17">Kubernetes</a>
-            
-        
-            
             <a href="/tags/#Golang" title="Golang" rel="11">Golang</a>
             
         
             
-        
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="19">Kubernetes</a>
             
         
             
         
             
             <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
+            
+        
+            
+        
             
         
             
@@ -674,23 +681,23 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
     <ul>
       
         <li>
-          <a href="/article/linux/supervisor-usage/">[Linux] Supervisor的使用</a>
+          <a href="/article/blockchain/blockchain-introduction/">[Blockchain] 区块链系列（八）之区块链介绍</a>
         </li>
       
         <li>
-          <a href="/article/arithmetic/data-structure-overview/">[Arithmetic] 数据结构概述</a>
+          <a href="/article/blockchain/blockchain-transactions/">[Blockchain] 区块链系列（六）之比特币交易</a>
         </li>
       
         <li>
-          <a href="/article/redis/redis-cluster/">[Redis] Redis集群模式部署</a>
+          <a href="/article/blockchain/blockchain-keys&addresses/">[Blockchain] 区块链系列（四）之密钥和地址</a>
         </li>
       
         <li>
-          <a href="/article/redis/redis-sentinel/">[Redis] Redis哨兵模式部署</a>
+          <a href="/article/kubernetes/kubernetes-resource/">[Kubernetes] kubernetes资源配额详解</a>
         </li>
       
         <li>
-          <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
+          <a href="/article/kubernetes/nodeselector-and-taint/">[Kubernetes] kubernetes指定节点调度与隔离</a>
         </li>
       
     </ul>
@@ -719,7 +726,7 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>

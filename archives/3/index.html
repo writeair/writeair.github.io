@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://ozilwgpje.bkt.clouddn.com/scenery/city.jpg') 
+            background-image: url('http://ozilwgpje.bkt.clouddn.com/blog/home.jpg?imageslim') 
             /*config*/
         
     }
@@ -206,6 +206,225 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-pointer/">
+        <h2 class="post-title">
+            [Golang] Go语言指针详解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 指针的概念
+
+
+
+概念
+说明
+
+
+
+
+变量
+是一种占位符，用于引用计算机的内存地址。可理解为内存地址的标签
+
+
+指针
+表示内存地址，表示地址的指向。指针是一个指向另一个变量内存地址的值
+
+
+&amp;
+取地址符，例如：{指针}:=&amp;{变量}
+
+
+*
+取值符，例如：{变量}:=*{指针}
+
+
+
+2. 内存地址说明
+2.1. 内存定义
+计算机的内存 RAM 可以把它想象成一些有序的......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-14
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-concurrent-programming/">
+        <h2 class="post-title">
+            [Golang] Golang系列（三）之并发编程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            （一）并发基础
+1.概念
+并发意味着程序在运行时有多个执行上下文，对应多个调用栈。
+并发与并行的区别：
+并发的主流实现模型：
+
+
+
+实现模型
+说明
+特点
+
+
+
+
+多进程
+操作系统层面的并发模式
+处理简单，互不影响，但开销大
+
+
+多线程
+系统层面的并发模式
+有效，开销较大，高并发时影响效率
+
+
+基于回调的非阻塞/异步IO
+多用于高并发服务器开发中
+编程复杂，开销小
+
+
+协程
+用户态线程，不需要......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-14
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/nginx/nginx-deploy&config/">
+        <h2 class="post-title">
+            [Nginx] Nginx的部署与配置
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 部署
+1.1. 使用安装包的方式
+rpm -ivh nginx-xxx.rpm
+1.2. 使用源代码安装
+1.2.1. 下载源码包
+1wget http://nginx.org/download/nginx-1.9.13.tar.gz
+1.2.2. 创建临时目录并解压源码包
+12mkdir $HOME/buildcd $HOME/build &amp;&amp; tar zxvf ng......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Nginx" title="Nginx">Nginx</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/python/basics/python-object-oriented-programming/">
+        <h2 class="post-title">
+            [Python] Python系列（四）之面向对象编程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 类和实例
+在Python中所有的数据类型都可以视为对象，也可以自定义对象。自定义的对象数据类型即面向对象中的类（Class）概念。类是抽象的模板，实例是具体的对象。
+类的定义
+Python使用class关键字定义类：
+12345678class Student(object):    def __init__(self, name, score):        self.name =......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-11
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/python/basics/python-advanced-features/">
+        <h2 class="post-title">
+            [Python] Python系列（三）之高级特性
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 切片
+切片操作（slice），即从list（tuple是一种特殊的list）中获取部分元素。
+
+L[m,n]表示从L[m]~L[n-1]的list。
+L[:n]表示从L[0]~L[n-1]的list。
+L[m:]表示从L[m]~L[len(L)-1]。
+L[-m:]表示倒数m个数的list。
+L[m:n:k]表示从L[m:n]list中每k个取一个数组成一个新的list。
+L[::k]......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-11
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -356,107 +575,6 @@ golang工程的依赖包经常使用go get 的方式来获取，例如：go get 
 
 <div class="post-preview">
 
-    <a href="/article/golang/web-programming/golang-http-execution-flow/">
-        <h2 class="post-title">
-            [Golang] GO HTTP执行流程
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. http包建立web服务器
-1234567891011121314151617181920212223242526package mainimport (    "fmt"    "log"    "net/http"    "strings")func sayhelloName(w http.ResponseWriter, r *http.Request) &#123;    r.P......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/beego/beego-introduction/">
-        <h2 class="post-title">
-            [Golang] beego介绍
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. beego的使用
-1.1. beego的安装
-1go get github.com/astaxie/beego
-1.2. beego的升级
-1、直接升级
-1go get -u github.com/astaxie/beego
-2、源码下载升级
-用户访问 https://github.com/astaxie/beego ,下载源码，然后覆盖到 $GOPATH/src/github.com......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-gdb-debug/">
-        <h2 class="post-title">
-            [Golang] Golang之GDB调试
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. GDB简介
-GDB是FSF(自由软件基金会)发布的一个强大的类UNIX系统下的程序调试工具。使用GDB可以做如下事情：
-
-启动程序，可以按照开发者的自定义要求运行程序。
-可让被调试的程序在开发者设定的调置的断点处停住。（断点可以是条件表达式）
-当程序被停住时，可以检查此时程序中所发生的事。
-动态的改变当前程序的执行环境。
-
-目前支持调试Go程序的GDB版本必须大于7.1。
-编译Go程序......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/golang/golang-text-process/">
         <h2 class="post-title">
             [Golang] Golang文本处理
@@ -481,64 +599,6 @@ JSON是一种轻量级的数据交换语言。
         <div class="tags">
             
               <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes核心原理（四）之kubelet
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. kubelet简介
-在kubernetes集群中，每个Node节点都会启动kubelet进程，用来处理Master节点下发到本节点的任务，管理Pod和其中的容器。kubelet会在API Server上注册节点信息，定期向Master汇报节点资源使用情况，并通过cAdvisor监控容器和节点资源。可以把kubelet理解成【Server-Agent】架构中的agent，是Node上的p......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-controller-manager/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes核心原理（二）之Controller Manager
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Controller Manager简介
-Controller Manager作为集群内部的管理控制中心，负责集群内的Node、Pod副本、服务端点（Endpoint）、命名空间（Namespace）、服务账号（ServiceAccount）、资源定额（ResourceQuota）的管理，当某个Node意外宕机时，Controller Manager会及时发现并执行自动化修复流程，确保......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-15
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
             
         </div>
     
@@ -588,6 +648,10 @@ Controller Manager作为集群内部的管理控制中心，负责集群内的No
             
         
             
+            <a href="/tags/#Blockchain" title="Blockchain" rel="3">Blockchain</a>
+            
+        
+            
         
             
             <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
@@ -598,21 +662,21 @@ Controller Manager作为集群内部的管理控制中心，负责集群内的No
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="17">Kubernetes</a>
-            
-        
-            
             <a href="/tags/#Golang" title="Golang" rel="11">Golang</a>
             
         
             
-        
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="19">Kubernetes</a>
             
         
             
         
             
             <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
+            
+        
+            
+        
             
         
             
@@ -682,23 +746,23 @@ Controller Manager作为集群内部的管理控制中心，负责集群内的No
     <ul>
       
         <li>
-          <a href="/article/linux/supervisor-usage/">[Linux] Supervisor的使用</a>
+          <a href="/article/blockchain/blockchain-introduction/">[Blockchain] 区块链系列（八）之区块链介绍</a>
         </li>
       
         <li>
-          <a href="/article/arithmetic/data-structure-overview/">[Arithmetic] 数据结构概述</a>
+          <a href="/article/blockchain/blockchain-transactions/">[Blockchain] 区块链系列（六）之比特币交易</a>
         </li>
       
         <li>
-          <a href="/article/redis/redis-cluster/">[Redis] Redis集群模式部署</a>
+          <a href="/article/blockchain/blockchain-keys&addresses/">[Blockchain] 区块链系列（四）之密钥和地址</a>
         </li>
       
         <li>
-          <a href="/article/redis/redis-sentinel/">[Redis] Redis哨兵模式部署</a>
+          <a href="/article/kubernetes/kubernetes-resource/">[Kubernetes] kubernetes资源配额详解</a>
         </li>
       
         <li>
-          <a href="/article/kubernetes/understanding-kubernetes-objects/">[Kubernetes] 理解kubernetes对象</a>
+          <a href="/article/kubernetes/nodeselector-and-taint/">[Kubernetes] kubernetes指定节点调度与隔离</a>
         </li>
       
     </ul>
@@ -727,7 +791,7 @@ Controller Manager作为集群内部的管理控制中心，负责集群内的No
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
