@@ -209,6 +209,318 @@
 
 <div class="post-preview">
 
+    <a href="/article/kubernetes/kubernetes-troubleshooting/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes集群问题排查
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 查看系统Event事件
+ 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
+该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
+
+没有可用的Node可调度
+开启了资源配额管理并......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-architecture/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes总架构图
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Kubernetes的总架构图
+
+2. Kubernetes各个组件介绍
+2.1 kube-master[控制节点]
+master的工作流程图
+
+
+Kubecfg将特定的请求，比如创建Pod，发送给Kubernetes Client。
+Kubernetes Client将请求发送给API server。
+API Server根据请求的类型，比如创建Pod时storage类型是pods，......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/paas-based-on-docker&kubernetes/">
+        <h2 class="post-title">
+            [Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            [编者的话]
+目前很多的容器云平台通过Docker及Kubernetes等技术提供应用运行平台，从而实现运维自动化，快速部署应用、弹性伸缩和动态调整应用环境资源，提高研发运营效率。
+从宏观到微观（从抽象到具体）的思路来理解：云计算→PaaS→ App Engine→XAE[XXX App Engine] （XAE泛指一类应用运行平台，例如GAE、SAE、BAE等）。
+本文简要介绍了与容器云相......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-19
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-api-server/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes核心原理（一）之API Server
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. API Server简介
+k8s API Server提供了k8s各类资源对象（pod,RC,Service等）的增删改查及watch等HTTP Rest接口，是整个系统的数据总线和数据中心。
+kubernetes API Server的功能：
+
+提供了集群管理的REST API接口(包括认证授权、数据校验以及集群状态变更)；
+提供其他模块之间的数据交互和通信的枢纽（其他模块通过API......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-18
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-packages/">
+        <h2 class="post-title">
+            [Golang] Golang常用包
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、常用包
+
+
+
+常用包
+说明
+常用函数
+
+
+
+
+fmt
+实现格式化的输入输出操作，其中的fmt.Printf()和fmt.Println()是开发者使用最为频繁的函数。
+
+
+
+io
+实现了一系列非平台相关的IO相关接口和实现，比如提供了对os中系统相关的IO功能的封装。我们在进行流式读写（比如读写文件）时，通常会用到该包。
+
+
+
+bufio
+它在io的基础上提供了缓存功能。在具备了缓存功能......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-pod-introduction/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes之Pod详解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Pod的基本用法
+1.1. 说明
+
+Pod实际上是容器的集合，在k8s中对运行容器的要求为：容器的主程序需要一直在前台运行，而不是后台运行。应用可以改造成前台运行的方式，例如Go语言的程序，直接运行二进制文件；java语言则运行主类；tomcat程序可以写个运行脚本。或者通过supervisor的进程管理工具，即supervisor在前台运行，应用程序由supervisor管理在后台运......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-17
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-basis/">
+        <h2 class="post-title">
+            [Golang] Golang系列（一）之基础篇
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            一、初识Go语言
+（一）概述
+一个在语言层面实现了并发机制的类C通用型编程语言。
+（二）Go关键字（25个）
+
+
+
+类别
+关键字
+说明
+
+
+
+
+程序声明
+package，import
+包的声明和导入
+
+
+声明与定义
+var，const
+变量和常量的声明
+
+
+
+type
+用于定义类型
+
+
+复合数据类型
+struct
+定义结构体，类似java中的class
+
+
+
+interface
+定义接口
+
+......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/golang/golang-object-oriented-programming/">
+        <h2 class="post-title">
+            [Golang] Golang系列（二）之面向对象编程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+面向对象编程
+
+​       把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）[方法的重写，子类不同于父类的特性]／泛化（generalization）[共性，子类都拥有父类的特性]，通过多态（polymor......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/golang/golang-pointer/">
         <h2 class="post-title">
             [Golang] Go语言指针详解
@@ -323,289 +635,6 @@
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/nginx/nginx-deploy&config/">
-        <h2 class="post-title">
-            [Nginx] Nginx的部署与配置
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 部署
-1.1. 使用安装包的方式
-rpm -ivh nginx-xxx.rpm
-1.2. 使用源代码安装
-1.2.1. 下载源码包
-1wget http://nginx.org/download/nginx-1.9.13.tar.gz
-1.2.2. 创建临时目录并解压源码包
-12mkdir $HOME/buildcd $HOME/build &amp;&amp; tar zxvf ng......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Nginx" title="Nginx">Nginx</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/python/basics/python-object-oriented-programming/">
-        <h2 class="post-title">
-            [Python] Python系列（四）之面向对象编程
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 类和实例
-在Python中所有的数据类型都可以视为对象，也可以自定义对象。自定义的对象数据类型即面向对象中的类（Class）概念。类是抽象的模板，实例是具体的对象。
-类的定义
-Python使用class关键字定义类：
-12345678class Student(object):    def __init__(self, name, score):        self.name =......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-11
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/python/basics/python-advanced-features/">
-        <h2 class="post-title">
-            [Python] Python系列（三）之高级特性
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 切片
-切片操作（slice），即从list（tuple是一种特殊的list）中获取部分元素。
-
-L[m,n]表示从L[m]~L[n-1]的list。
-L[:n]表示从L[0]~L[n-1]的list。
-L[m:]表示从L[m]~L[len(L)-1]。
-L[-m:]表示倒数m个数的list。
-L[m:n:k]表示从L[m:n]list中每k个取一个数组成一个新的list。
-L[::k]......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-11
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/python/basics/python-function/">
-        <h2 class="post-title">
-            [Python] Python系列（二）之Python函数
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 内置函数
-python的内置参数详见以下链接，也可以通过help(function_name)来查看具体函数的使用帮助。
-http://docs.python.org/3/library/functions.html#abs
-
-
-
-
-Built-in Functions
-
-
-
-
-
-
-
-abs()
-dict()
-help()
-min()
-setattr()
-
-
-all()
-dir()
-h......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/python/basics/python-basics/">
-        <h2 class="post-title">
-            [Python] Python系列（一）之基础篇
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 数据类型和变量
-​	Python使用缩进来组织代码块，一般使用4个空格的缩进。使用#来注释一行，其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块。Python对大小写敏感。
-1.1 整数
-​	Python可以处理任意大小的整数，包括负整数，写法与数学上写法一致，例如：-100。如果用十六进制表示，则用前缀为0x和0-9，a-f表示，例如：0xff00。
-1.2 浮点数......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-test/">
-        <h2 class="post-title">
-            [Golang] Golang测试用例
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Go中的测试框架
-Go语言中自带有一个轻量级的测试框架testing和自带的go test命令来实现单元测试和性能测试，testing框架和其他语言中的测试框架类似，你可以基于这个框架写针对相应函数的测试用例，也可以基于该框架写相应的压力测试用例。
-2. 单元测试原则
-
-文件名必须是_test.go结尾的，这样在执行go test的时候才会执行到相应的代码
-你必须import test......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/govendor-usage/">
-        <h2 class="post-title">
-            [Golang] govendor的使用
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. govendor简介
-golang工程的依赖包经常使用go get 的方式来获取，例如：go get github.com/kardianos/govendor ，会将依赖包下载到GOPATH的路径下。
-常用的依赖包管理工具有godep，govendor等，在Golang1.5之后，Go提供了 GO15VENDOREXPERIMENT 环境变量，用于将go build时的应用路径搜索调......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/golang/golang-text-process/">
-        <h2 class="post-title">
-            [Golang] Golang文本处理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. JSON处理
-JSON是一种轻量级的数据交换语言。
-1.1. 解析JSON[Unmarshal(data []byte, v interface{})]
-1.1.1. Unmarshal源码
-/src/encoding/json/decode.go
-1234567891011121314151617181920212223242526272829303132func Unmarshal......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Golang" title="Golang">Golang</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -648,13 +677,13 @@ JSON是一种轻量级的数据交换语言。
             
         
             
-            <a href="/tags/#Blockchain" title="Blockchain" rel="3">Blockchain</a>
+            <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
             
         
             
         
             
-            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
@@ -662,21 +691,27 @@ JSON是一种轻量级的数据交换语言。
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="11">Golang</a>
+            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="19">Kubernetes</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            
+        
+            
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            
+        
+            
+            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
+            
+        
             
         
             
         
             
             <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
-            
-        
-            
-        
             
         
             
@@ -746,6 +781,14 @@ JSON是一种轻量级的数据交换语言。
     <ul>
       
         <li>
+          <a href="/article/ethereum/ethereum-introduction/">[Ethereum] 以太坊系列（一）之以太坊介绍</a>
+        </li>
+      
+        <li>
+          <a href="/article/ethereum/ethereum-account-management/">[Ethereum] 以太坊系列（二）之账户管理</a>
+        </li>
+      
+        <li>
           <a href="/article/blockchain/blockchain-introduction/">[Blockchain] 区块链系列（八）之区块链介绍</a>
         </li>
       
@@ -755,14 +798,6 @@ JSON是一种轻量级的数据交换语言。
       
         <li>
           <a href="/article/blockchain/blockchain-keys&addresses/">[Blockchain] 区块链系列（四）之密钥和地址</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-resource/">[Kubernetes] kubernetes资源配额详解</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/nodeselector-and-taint/">[Kubernetes] kubernetes指定节点调度与隔离</a>
         </li>
       
     </ul>
@@ -791,7 +826,7 @@ JSON是一种轻量级的数据交换语言。
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>

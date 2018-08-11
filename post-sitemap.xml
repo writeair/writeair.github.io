@@ -7,6 +7,78 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/docker/install-docker/</loc>
+        <lastmod>2018-08-11T10:40:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/install-k8s-by-minikube/</loc>
+        <lastmod>2018-08-11T10:39:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/install-k8s-by-kubespray/</loc>
+        <lastmod>2018-08-11T10:39:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/linux/ansible-usage/</loc>
+        <lastmod>2018-08-11T10:35:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/dep-usage/</loc>
+        <lastmod>2018-08-11T10:34:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/glide-usage/</loc>
+        <lastmod>2018-08-11T10:34:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/ethereum/ethereum-account-management/</loc>
+        <lastmod>2018-08-11T10:30:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/ethereum/ethereum-introduction/</loc>
+        <lastmod>2018-08-11T10:30:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-commands/</loc>
+        <lastmod>2018-08-11T10:16:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/nodeselector-and-taint/</loc>
         <lastmod>2018-07-01T09:36:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,7 +151,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/etcd/etcd-auth&security/</loc>
+        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +159,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
+        <loc>http://www.huweihuang.com/article/etcd/etcd-auth&security/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -111,7 +183,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-concurrent-programming/</loc>
+        <loc>http://www.huweihuang.com/article/flannel/flannel-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -120,6 +192,14 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/golang/golang-basis/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/golang-concurrent-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -143,14 +223,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -159,7 +231,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,7 +239,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/flannel/flannel-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -184,14 +256,6 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-commands/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -231,6 +295,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-troubleshooting/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/understanding-kubernetes-objects/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -247,39 +319,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-troubleshooting/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/machine-learning/machine-learning-concept/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/redis/redis-introduction/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/nginx/nginx-deploy&config/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/redis/redis-sentinel/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -295,7 +335,15 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
+        <loc>http://www.huweihuang.com/article/nginx/nginx-deploy&config/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/redis/redis-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -304,6 +352,22 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/redis/redis-cluster/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/redis/redis-sentinel/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -359,7 +423,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-controller-manager/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -375,7 +439,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-controller-manager/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,14 +479,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/python/basics/python-advanced-features/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -432,6 +488,14 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/python/basics/python-basics/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

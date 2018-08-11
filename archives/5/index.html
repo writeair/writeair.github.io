@@ -209,18 +209,179 @@
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-commands/">
+    <a href="/article/golang/beego/beego-introduction/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes常用命令
+            [Golang] beego介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、kubectl介绍
-kubectl controls the Kubernetes cluster manager.
-Usage: kubectl [flags] kubectl [command]
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152......
+            1. beego的使用
+1.1. beego的安装
+1go get github.com/astaxie/beego
+1.2. beego的升级
+1、直接升级
+1go get -u github.com/astaxie/beego
+2、源码下载升级
+用户访问 https://github.com/astaxie/beego ,下载源码，然后覆盖到 $GOPATH/src/github.com......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-01
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Golang" title="Golang">Golang</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes核心原理（四）之kubelet
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. kubelet简介
+在kubernetes集群中，每个Node节点都会启动kubelet进程，用来处理Master节点下发到本节点的任务，管理Pod和其中的容器。kubelet会在API Server上注册节点信息，定期向Master汇报节点资源使用情况，并通过cAdvisor监控容器和节点资源。可以把kubelet理解成【Server-Agent】架构中的agent，是Node上的p......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-controller-manager/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes核心原理（二）之Controller Manager
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Controller Manager简介
+Controller Manager作为集群内部的管理控制中心，负责集群内的Node、Pod副本、服务端点（Endpoint）、命名空间（Namespace）、服务账号（ServiceAccount）、资源定额（ResourceQuota）的管理，当某个Node意外宕机时，Controller Manager会及时发现并执行自动化修复流程，确保......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/core-principle/kubernetes-core-principle-scheduler/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes核心原理（三）之Scheduler
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Scheduler简介
+Scheduler负责Pod调度。在整个系统中起&quot;承上启下&quot;作用，承上：负责接收Controller Manager创建的新的Pod，为其选择一个合适的Node；启下：Node上的kubelet接管Pod的生命周期。
+Scheduler：
+1）通过调度算法为待调度Pod列表的每个Pod从Node列表中选择一个最适合的Node，并将信息写入et......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-15
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-basic-concepts/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes基本概念
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. Master
+集群的控制节点，负责整个集群的管理和控制，kubernetes的所有的命令基本都是发给Master，由它来负责具体的执行过程。
+1.1. Master的组件
+
+kube-apiserver：资源增删改查的入口
+kube-controller-manager：资源对象的大总管
+kube-scheduler：负责资源调度（Pod调度）
+etcd Server:kubernet......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-network/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes网络原理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. kubernetes网络模型
+1.1. 基础原则
+
+每个Pod都拥有一个独立的IP地址，而且假定所有Pod都在一个可以直接连通的、扁平的网络空间中，不管是否运行在同一Node上都可以通过Pod的IP来访问。
+k8s中Pod的IP是最小粒度IP。同一个Pod内所有的容器共享一个网络堆栈，该模型称为IP-per-Pod模型。
+Pod由docker0实际分配的IP，Pod内部看到的IP地址和......
         </div>
     </a>
     
@@ -251,6 +412,39 @@ Usage: kubectl [flags] kubectl [command]
             1. 概述
 1.1. cAdvisor
 cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/kubernetes-commands/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes常用命令（kubectl）
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. kubectl介绍
+kubectl controls the Kubernetes cluster manager.
+Usage:
+kubectl [flags]
+kubectl [command]
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
         </div>
     </a>
     
@@ -306,16 +500,19 @@ wget ......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
+    <a href="/article/kubernetes/monitoring/heapster-introduction/">
         <h2 class="post-title">
-            [Kubernetes] cAdvisor介绍
+            [Kubernetes] Heapster介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. cAdvisor简介
-​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
+            1. heapster简介
+Heapster是容器集群监控和性能分析工具，天然的支持Kubernetes和CoreOS。
+Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都会运行cAdvisor，它会收集本机以及容器的监控数据(cpu,memory,filesystem,network,uptime)。
+2. heapster部署与配置
+......
         </div>
     </a>
     
@@ -326,195 +523,6 @@ wget ......
         <div class="tags">
             
               <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/redis/redis-introduction/">
-        <h2 class="post-title">
-            [Redis] Redis介绍
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、redis是什么？（what）
-Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。它支持字符串、哈希表、列表、集合、有序集合，位图，hyperloglogs等数据类型。内置复制、Lua脚本、LRU收回、事务以及不同级别磁盘持久化功能，同时通过Redis Sentinel提供高可用，通过Redis Cluster提供自动分区。
-Redis是......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-15
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Redis" title="Redis">Redis</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/etcd/etcd-auth&security/">
-        <h2 class="post-title">
-            [Etcd] Etcd访问控制
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. ETCD资源类型
-There are three types of resources in etcd
-permission resources: users and roles in the user store
-key-value resources: key-value pairs in the key-value store
-settings resources: securi......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Etcd" title="Etcd">Etcd</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/etcd/etcd-commands/">
-        <h2 class="post-title">
-            [Etcd] Etcd常用命令
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、etcdctl介绍
-etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可理解为命令工具集，可以方便我们在对服务进行测试或者手动修改数据库内容。etcdctl与其他xxxctl的命令原理及操作类似（例如kubectl，systemctl）。
-用法：etcdctl [global options] command [command options][args…]
-二、Etcd常用命......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Etcd" title="Etcd">Etcd</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/etcd/etcd-introduction/">
-        <h2 class="post-title">
-            [Etcd] Etcd介绍
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、Etcd是什么（what）
-（一）概述
-etcd is a distributed, consistent key-value store for shared configuration and service discovery, with a focus on being:
-
-Secure: automatic TLS with optional client cert authe......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-10
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Etcd" title="Etcd">Etcd</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
-        <h2 class="post-title">
-            [Docker] Docker源码分析（三）之Docker Server
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、Docker Server创建流程
-Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
-Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Docker" title="Docker">Docker</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-client/">
-        <h2 class="post-title">
-            [Docker] Docker源码分析（一）之Docker Client
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            一、创建Docker Client
-​    Docker是一个client/server的架构，通过二进制文件docker创建Docker客户端将请求类型与参数发送给Docker Server，Docker Server具体执行命令调用。
-Docker Client运行流程图如下：
-
-说明：本文分析的代码为Docker 1.2.0版本。
-（一）Docker命令flag参数解析
-Docker......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-07-09
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Docker" title="Docker">Docker</a>
             
         </div>
     
@@ -564,13 +572,13 @@ Docker......
             
         
             
-            <a href="/tags/#Blockchain" title="Blockchain" rel="3">Blockchain</a>
+            <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
             
         
             
         
             
-            <a href="/tags/#Docker" title="Docker" rel="6">Docker</a>
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
@@ -578,21 +586,27 @@ Docker......
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="11">Golang</a>
+            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="19">Kubernetes</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            
+        
+            
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            
+        
+            
+            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
+            
+        
             
         
             
         
             
             <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
-            
-        
-            
-        
             
         
             
@@ -662,6 +676,14 @@ Docker......
     <ul>
       
         <li>
+          <a href="/article/ethereum/ethereum-introduction/">[Ethereum] 以太坊系列（一）之以太坊介绍</a>
+        </li>
+      
+        <li>
+          <a href="/article/ethereum/ethereum-account-management/">[Ethereum] 以太坊系列（二）之账户管理</a>
+        </li>
+      
+        <li>
           <a href="/article/blockchain/blockchain-introduction/">[Blockchain] 区块链系列（八）之区块链介绍</a>
         </li>
       
@@ -671,14 +693,6 @@ Docker......
       
         <li>
           <a href="/article/blockchain/blockchain-keys&addresses/">[Blockchain] 区块链系列（四）之密钥和地址</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/kubernetes-resource/">[Kubernetes] kubernetes资源配额详解</a>
-        </li>
-      
-        <li>
-          <a href="/article/kubernetes/nodeselector-and-taint/">[Kubernetes] kubernetes指定节点调度与隔离</a>
         </li>
       
     </ul>
@@ -707,7 +721,7 @@ Docker......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
