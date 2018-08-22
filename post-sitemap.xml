@@ -199,14 +199,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-gdb-debug/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/golang/golang-concurrent-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -215,7 +207,23 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/golang/golang-gdb-debug/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -232,14 +240,6 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -303,7 +303,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/paas-based-on-docker&kubernetes/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/paas-based-on-docker-and-kubernetes/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -343,7 +343,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/redis/redis-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/redis/redis-cluster/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -351,7 +351,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/redis/redis-cluster/</loc>
+        <loc>http://www.huweihuang.com/article/redis/redis-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +383,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-daemon/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-daemon/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -423,6 +423,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-api-server/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -447,7 +455,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-api-server/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -456,14 +464,6 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -495,7 +495,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/python/basics/python-object-oriented-programming/</loc>
+        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -503,7 +503,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
+        <loc>http://www.huweihuang.com/article/python/basics/python-object-oriented-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

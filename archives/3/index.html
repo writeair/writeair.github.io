@@ -139,14 +139,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -209,39 +209,6 @@
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-troubleshooting/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes集群问题排查
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 查看系统Event事件
- 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
-该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
-
-没有可用的Node可调度
-开启了资源配额管理并......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-09-20
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/kubernetes/kubernetes-architecture/">
         <h2 class="post-title">
             [Kubernetes] Kubernetes总架构图
@@ -279,7 +246,40 @@ API Server根据请求的类型，比如创建Pod时storage类型是pods，.....
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/paas-based-on-docker&kubernetes/">
+    <a href="/article/kubernetes/kubernetes-troubleshooting/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes集群问题排查
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 查看系统Event事件
+ 1kubectl describe pod &lt;PodName&gt; --namespace=&lt;NAMESPACE&gt;
+该命令可以显示Pod创建时的配置定义、状态等信息和最近的Event事件，事件信息可用于排错。例如当Pod状态为Pending，可通过查看Event事件确认原因，一般原因有几种：
+
+没有可用的Node可调度
+开启了资源配额管理并......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-09-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/paas-based-on-docker-and-kubernetes/">
         <h2 class="post-title">
             [Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台
         </h2>
@@ -675,9 +675,9 @@ interface
     <div class="tags">
         
             
-        
-            
             <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
+            
+        
             
         
             
@@ -687,11 +687,11 @@ interface
             
         
             
-            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
+            <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
             
         
             
-            <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
+            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
             
         
             
