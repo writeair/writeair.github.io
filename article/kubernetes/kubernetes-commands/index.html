@@ -265,7 +265,7 @@ kubectl [command]</p>
 <h3 id="53-删除pod">5.3 删除Pod</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete pod wsop-proxy-1-0-9-ii97y</span><br></pre></td></tr></table></figure>
 <h3 id="54-日志查看">5.4 日志查看</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> 查看运行容器日志 </span><br><span class="line">kubectl logs wsop-proxy-1-0-9-ii97y --namespace=&lt;namespace&gt;</span><br><span class="line"><span class="meta">$</span> 查看上一个挂掉的容器日志 </span><br><span class="line">kubectl logs wsop-proxy-1-0-9-ii97y -p --namespace=&lt;namespace&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> 查看运行容器日志 </span></span><br><span class="line">kubectl logs wsop-proxy-1-0-9-ii97y --namespace=&lt;namespace&gt;</span><br><span class="line"><span class="meta">$</span><span class="bash"> 查看上一个挂掉的容器日志 </span></span><br><span class="line">kubectl logs wsop-proxy-1-0-9-ii97y -p --namespace=&lt;namespace&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="6-node隔离与恢复">6. Node隔离与恢复</h2>
 <p>说明：Node设置隔离之后，原先运行在该Node上的Pod不受影响，后续的Pod不会调度到被隔离的Node上。</p>
 <p><strong>1. Node隔离</strong></p>
@@ -278,7 +278,7 @@ kubectl [command]</p>
 <p><strong>2. 取消Pod固定机器</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl label node &lt;NodeName&gt; namespace/&lt;NAMESPACE&gt;-</span><br></pre></td></tr></table></figure>
 <h2 id="8-kubectl-自动补全">8. kubectl 自动补全</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> for linux</span><br><span class="line">source &lt;(kubectl completion bash)</span><br><span class="line">echo "source &lt;(kubectl completion bash)" &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">for</span> linux</span></span><br><span class="line">source &lt;(kubectl completion bash)</span><br><span class="line">echo "source &lt;(kubectl completion bash)" &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
 <div><h2 id="推荐文章">推荐文章<span style="font-size:0.45em; color:gray"></span></h2><ul><li><a href="http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-kubelet/">[Kubernetes] Kubernetes核心原理（四）之kubelet</a></li><li><a href="http://www.huweihuang.com/article/kubernetes/core-principle/kubernetes-core-principle-controller-manager/">[Kubernetes] Kubernetes核心原理（二）之Controller Manager</a></li><li><a href="http://www.huweihuang.com/article/kubernetes/paas-based-on-docker&kubernetes/">[Kubernetes] 基于Docker及Kubernetes技术构建容器云（PaaS）平台</a></li></ul></div>
                 
 
@@ -292,7 +292,7 @@ kubectl [command]</p>
                     
                     
                         <li class="next">
-                            <a href="/article/kubernetes/kubernetes-basic-concepts/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Kubernetes基本概念">Next Post &rarr;</a>
+                            <a href="/article/kubernetes/kubernetes-network/" data-toggle="tooltip" data-placement="top" title="[Kubernetes] Kubernetes网络原理">Next Post &rarr;</a>
                         </li>
                     
                 </ul>

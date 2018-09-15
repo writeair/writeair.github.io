@@ -9,14 +9,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/Database/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/tags/Etcd/</loc>
+        <loc>http://www.huweihuang.com/tags/MachineLearning/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -31,13 +24,6 @@
 
     <url>
         <loc>http://www.huweihuang.com/tags/Redis/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/tags/MachineLearning/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -72,13 +58,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/Golang/</loc>
-        <lastmod>2018-08-11T10:34:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/tags/Linux/</loc>
         <lastmod>2018-08-11T10:35:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -86,15 +65,36 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/Kubernetes/</loc>
-        <lastmod>2018-08-11T10:39:16.000Z</lastmod>
+        <loc>http://www.huweihuang.com/tags/Docker/</loc>
+        <lastmod>2018-09-15T13:46:23.144Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/Docker/</loc>
-        <lastmod>2018-08-11T10:40:09.000Z</lastmod>
+        <loc>http://www.huweihuang.com/tags/Etcd/</loc>
+        <lastmod>2018-09-15T13:47:24.814Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Kubernetes/</loc>
+        <lastmod>2018-09-15T13:53:02.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Golang/</loc>
+        <lastmod>2018-09-15T13:56:49.470Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Database/</loc>
+        <lastmod>2018-09-15T14:02:13.423Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
