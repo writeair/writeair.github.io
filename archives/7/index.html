@@ -209,17 +209,20 @@
 
 <div class="post-preview">
 
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-server/">
+    <a href="/article/docker/docker-commands-principle/">
         <h2 class="post-title">
-            [Docker] Docker源码分析（三）之Docker Server
+            [Docker] Docker常用命令原理图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker Server创建流程
-Docker Server是Daemon Server的重要组成部分，功能：接收Docker Client发送的请求，并按照相应的路由规则实现请求的路由分发，最终将请求处理的结果返回给Docker Client。
-Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的Job，让Docker Daemon提供A......
+            1. 基本概念
+1.1. image layer（镜像层）
+镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
+
+根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
+只读层和读写层【top layer】的......
         </div>
     </a>
     
@@ -339,10 +342,6 @@ Flannel官网：https://github.com/coreos/flannel
     <div class="tags">
         
             
-            <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
-            
-        
-            
         
             
         
@@ -355,11 +354,11 @@ Flannel官网：https://github.com/coreos/flannel
             
         
             
-            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
+            <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            <a href="/tags/#Ethereum" title="Ethereum" rel="2">Ethereum</a>
             
         
             
@@ -367,9 +366,7 @@ Flannel官网：https://github.com/coreos/flannel
             
         
             
-            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
-            
-        
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
             
         
             
@@ -381,7 +378,13 @@ Flannel官网：https://github.com/coreos/flannel
             
         
             
+            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
+            
+        
+            
             <a href="/tags/#Python" title="Python" rel="4">Python</a>
+            
+        
             
         
     </div>
