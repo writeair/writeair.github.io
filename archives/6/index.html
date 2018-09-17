@@ -241,22 +241,17 @@ Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-basic-concepts/">
+    <a href="/article/kubernetes/monitoring/kubernetes-cluster-monitoring/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes基本概念
+            [Kubernetes] Kubernetes集群监控
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. Master
-集群的控制节点，负责整个集群的管理和控制，kubernetes的所有的命令基本都是发给Master，由它来负责具体的执行过程。
-1.1. Master的组件
-
-kube-apiserver：资源增删改查的入口
-kube-controller-manager：资源对象的大总管
-kube-scheduler：负责资源调度（Pod调度）
-etcd Server:kubernet......
+            1. 概述
+1.1. cAdvisor
+cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
         </div>
     </a>
     
@@ -338,18 +333,19 @@ settings resources: securi......
 
 <div class="post-preview">
 
-    <a href="/article/etcd/etcd-commands/">
+    <a href="/article/etcd/etcd-introduction/">
         <h2 class="post-title">
-            [Etcd] Etcd常用命令
+            [Etcd] Etcd介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、etcdctl介绍
-etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可理解为命令工具集，可以方便我们在对服务进行测试或者手动修改数据库内容。etcdctl与其他xxxctl的命令原理及操作类似（例如kubectl，systemctl）。
-用法：etcdctl [global options] command [command options][args…]
-二、Etcd常用命......
+            1. Etcd是什么（what）
+1.1. 概述
+etcd is a distributed, consistent key-value store for shared configuration and service discovery, with a focus on being:
+
+Secure: automatic TLS with optional client cert au......
         </div>
     </a>
     
@@ -369,19 +365,18 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
 
 <div class="post-preview">
 
-    <a href="/article/etcd/etcd-introduction/">
+    <a href="/article/etcd/etcd-commands/">
         <h2 class="post-title">
-            [Etcd] Etcd介绍
+            [Etcd] Etcd常用命令
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. Etcd是什么（what）
-1.1. 概述
-etcd is a distributed, consistent key-value store for shared configuration and service discovery, with a focus on being:
-
-Secure: automatic TLS with optional client cert au......
+            一、etcdctl介绍
+etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可理解为命令工具集，可以方便我们在对服务进行测试或者手动修改数据库内容。etcdctl与其他xxxctl的命令原理及操作类似（例如kubectl，systemctl）。
+用法：etcdctl [global options] command [command options][args…]
+二、Etcd常用命......
         </div>
     </a>
     
@@ -552,6 +547,11 @@ Docker......
 
 
 
+                <br>
+
+                <!-- require APlayer -->
+                
+
                 <!-- 如果开启评论功能 -->
                 
             </div>
@@ -585,10 +585,6 @@ Docker......
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
-            
-        
-            
             <a href="/tags/#Blockchain" title="Blockchain" rel="5">Blockchain</a>
             
         
@@ -601,15 +597,19 @@ Docker......
             
         
             
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            
+        
+            
         
             
             <a href="/tags/#Redis" title="Redis" rel="3">Redis</a>
             
         
             
-            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
-            
         
+            
+            <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
             
         
             
