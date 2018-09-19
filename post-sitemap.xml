@@ -319,7 +319,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/docker-architecture/</loc>
+        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -327,7 +327,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
+        <loc>http://www.huweihuang.com/article/docker/docker-architecture/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -431,7 +431,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -439,7 +439,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

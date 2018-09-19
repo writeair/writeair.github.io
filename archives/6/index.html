@@ -209,19 +209,16 @@
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/monitoring/heapster-introduction/">
+    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
         <h2 class="post-title">
-            [Kubernetes] Heapster介绍
+            [Kubernetes] cAdvisor介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. heapster简介
-Heapster是容器集群监控和性能分析工具，天然的支持Kubernetes和CoreOS。
-Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都会运行cAdvisor，它会收集本机以及容器的监控数据(cpu,memory,filesystem,network,uptime)。
-2. heapster部署与配置
-......
+            1. cAdvisor简介
+​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
         </div>
     </a>
     
@@ -396,21 +393,20 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
 
 <div class="post-preview">
 
-    <a href="/article/docker/docker-architecture/">
+    <a href="/article/docker/docker-commands-principle/">
         <h2 class="post-title">
-            [Docker] Docker整体架构图
+            [Docker] Docker常用命令原理图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker的总架构图
+            1. 基本概念
+1.1. image layer（镜像层）
+镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
 
-docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
-
-用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
-Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
-Engine执行Docker内部的一系列工作，每一项工作都是......
+根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
+只读层和读写层【top layer】的......
         </div>
     </a>
     
@@ -460,23 +456,21 @@ Docker Daemon启动，在mainDaemon()运行的最后创建并运行serverapi的J
 
 <div class="post-preview">
 
-    <a href="/article/docker/dockerfile-usage/">
+    <a href="/article/docker/docker-architecture/">
         <h2 class="post-title">
-            [Docker] Dockerfile使用说明
+            [Docker] Docker整体架构图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Dockerfile的说明
-dockerfile指令忽略大小写，建议大写，#作为注释，每行只支持一条指令，指令可以带多个参数。
-dockerfile指令分为构建指令和设置指令。
+            一、Docker的总架构图
 
-构建指令：用于构建image，其指定的操作不会在运行image的容器中执行。
-设置指令：用于设置image的属性，其指定的操作会在运行image的容器中执行。
+docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
 
-二、Dockerfile指令说明
-1、FROM（......
+用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
+Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
+Engine执行Docker内部的一系列工作，每一项工作都是......
         </div>
     </a>
     
@@ -593,11 +587,11 @@ Docker......
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
             
         
             
@@ -607,9 +601,9 @@ Docker......
             
         
             
-        
-            
             <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
+            
+        
             
         
             
