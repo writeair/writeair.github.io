@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/essay/sky-and-well/</loc>
+        <lastmod>2018-10-06T03:40:01.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/paas-based-on-docker-and-kubernetes/</loc>
         <lastmod>2018-10-01T07:44:43.902Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -455,7 +463,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-client/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -463,7 +471,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-client/</loc>
+        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -487,7 +495,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
+        <loc>http://www.huweihuang.com/article/python/basics/python-basics/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -495,7 +503,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/python/basics/python-basics/</loc>
+        <loc>http://www.huweihuang.com/article/python/basics/python-function/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
