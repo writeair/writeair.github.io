@@ -7,6 +7,62 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/kubelet/kubelet-cmd/</loc>
+        <lastmod>2018-10-19T04:44:06.694Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/blockchain/blockchain-keys&addresses/</loc>
+        <lastmod>2018-10-19T04:39:06.750Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/blockchain/blockchain-transactions/</loc>
+        <lastmod>2018-10-19T04:38:39.859Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/kubelet/kubelet-run/</loc>
+        <lastmod>2018-10-19T04:35:38.320Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/nfs-client-provisioner/</loc>
+        <lastmod>2018-10-19T04:29:17.896Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/csi-provisioner/</loc>
+        <lastmod>2018-10-19T04:29:06.606Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
+        <lastmod>2018-10-19T04:24:26.272Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/essay/sky-and-well/</loc>
         <lastmod>2018-10-06T06:54:23.550Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -239,22 +295,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/blockchain/blockchain-keys&addresses/</loc>
-        <lastmod>2018-06-24T07:37:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/blockchain/blockchain-transactions/</loc>
-        <lastmod>2018-06-24T07:32:21.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-resource/</loc>
         <lastmod>2018-06-24T07:22:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -295,7 +335,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -303,7 +343,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-test/</loc>
+        <loc>http://www.huweihuang.com/article/golang/govendor-usage/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -463,7 +503,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/source-analysis/client-go-source-analysis/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -472,14 +512,6 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-client/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

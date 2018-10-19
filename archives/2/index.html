@@ -209,6 +209,171 @@
 
 <div class="post-preview">
 
+    <a href="/article/kubernetes/kubernetes-resource/">
+        <h2 class="post-title">
+            [Kubernetes] kubernetes资源配额详解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 资源配额（ResourceQuota）
+ResourceQuota对象用来定义某个命名空间下所有资源的使用限额，其实包括：
+
+计算资源的配额
+存储资源的配额
+对象数量的配额
+
+如果集群的总容量小于命名空间的配额总额，可能会产生资源竞争。这时会按照先到先得来处理。
+资源竞争和配额的更新都不会影响已经创建好的资源。
+1.1. 启动资源配额
+Kubernetes 的众多发行版本默认开启了资源......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-24
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/install-k8s-by-kubespray/">
+        <h2 class="post-title">
+            [Kubernetes] 使用kubespray安装k8s集群
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 环境准备
+1.1. 部署机器
+
+以下机器为虚拟机
+
+
+
+
+机器IP
+主机名
+角色
+系统版本
+备注
+
+
+
+
+172.16.94.140
+kube-master-0
+k8s master
+Centos 4.17.14
+内存：3G
+
+
+172.16.94.141
+kube-node-41
+k8s node
+Centos 4.17.14
+内存：3G
+
+
+172.16.94.142
+kube-n......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-23
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/install-k8s-by-minikube/">
+        <h2 class="post-title">
+            [Kubernetes] 使用minikube安装k8s集群
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+以下内容基于Linux系统，特别为Ubuntu系统
+
+1. 安装kubectl
+1curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linu......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-23
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/docker/install-docker/">
+        <h2 class="post-title">
+            [Docker] 安装Docker
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. CentOS 安装Docker
+
+建议使用centos7
+
+1.1. 安装Docker
+1.1.1. 卸载旧版本
+旧版本的Docker命名为docker或docker-engine，如果有安装旧版本，先卸载旧版本
+12345678910$ sudo yum remove -y docker \                  docker-client \              ......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2018-06-23
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Docker" title="Docker">Docker</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/kubernetes/nodeselector-and-taint/">
         <h2 class="post-title">
             [Kubernetes] kubernetes指定节点调度与隔离
@@ -408,147 +573,6 @@ glide是一个golang项目的包管理工具，非常方便快捷，一般只需
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/redis/redis-cluster/">
-        <h2 class="post-title">
-            [Redis] Redis集群模式部署
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. Redis部署
-
-以下以Linux系统为例
-
-1.1 下载和编译
-1234$ wget http://download.redis.io/releases/redis-4.0.7.tar.gz$ tar xzf redis-4.0.7.tar.gz$ cd redis-4.0.7$ make
-编译完成后会在src目录下生成Redis服务端程序redis-server和客户端程序redi......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2018-04-17
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Redis" title="Redis">Redis</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/redis/redis-sentinel/">
-        <h2 class="post-title">
-            [Redis] Redis哨兵模式部署
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 部署Redis集群
-redis的安装及配置参考[redis部署]
-
-本文以创建一主二从的集群为例。
-
-1.1 部署与配置
-先创建sentinel目录，在该目录下创建8000，8001，8002三个以端口号命名的目录。
-123mkdir sentinelcd sentinelmkdir 8000 8001 8002
-在对应端口号目录中创建redis.conf的文件，配置文件中的端口号po......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2018-04-17
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Redis" title="Redis">Redis</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/understanding-kubernetes-objects/">
-        <h2 class="post-title">
-            [Kubernetes] 理解kubernetes对象
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. kubernetes对象概述
-kubernetes中的对象是一些持久化的实体，可以理解为是对集群状态的描述或期望。
-包括：
-
-集群中哪些node上运行了哪些容器化应用
-应用的资源是否满足使用
-应用的执行策略，例如重启策略、更新策略、容错策略等。
-
-kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保持预期创建的对象存在和集群运行在预期的状态下。
-操作kube......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2018-03-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/machine-learning/machine-learning-concept/">
-        <h2 class="post-title">
-            [MachineLearning] 机器学习的概念
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 机器学习的概念
-1.1 Arthur Samuel的定义
-​	机器学习是在特定的编程环境下，给予机器学习能力的领域。
-1.2 Tom Mitchell的定义
-​	机器学习是指一个程序被认为能从经验 E 中学习，解决任务 T，达到性能度量值P，当且仅当，有了经验 E 后，经过 P 评判，程序在处理 T 时的性能有所提升。
-1.3 例子
-​	例如下棋程序经过自己与自己的下棋练习，最后棋力大......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2018-01-06
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#MachineLearning" title="MachineLearning">MachineLearning</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -598,13 +622,13 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
             
         
             
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
+            
+        
+            
         
             
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
-            
-        
-            
-            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
@@ -616,11 +640,11 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
             
         
             
@@ -630,15 +654,17 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
             
         
             
-        
-            
             <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
             
         
             
-            <a href="/tags/#Python" title="Python" rel="4">Python</a>
+        
+            
+            <a href="/tags/#源码分析" title="源码分析" rel="5">源码分析</a>
             
         
+            
+            <a href="/tags/#Python" title="Python" rel="4">Python</a>
             
         
     </div>
@@ -751,7 +777,7 @@ kubernetes的对象是一种意图（期望）的记录，kubernetes会始终保
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>

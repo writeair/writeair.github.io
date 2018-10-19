@@ -364,7 +364,7 @@
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 胡伟煌 on
-            2018-06-24
+            2018-06-26
         </p>
         <div class="tags">
             
@@ -395,7 +395,7 @@
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 胡伟煌 on
-            2018-06-24
+            2018-06-26
         </p>
         <div class="tags">
             
@@ -409,25 +409,19 @@
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-resource/">
+    <a href="/article/source-analysis/kubelet/kubelet-run/">
         <h2 class="post-title">
-            [Kubernetes] kubernetes资源配额详解
+            [源码分析] kubelet源码分析（二）之 kubelet的运行
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. 资源配额（ResourceQuota）
-ResourceQuota对象用来定义某个命名空间下所有资源的使用限额，其实包括：
+            
+以下代码分析基于 kubernetes v1.12.0 版本。
+本文主要分析https://github.com/kubernetes/kubernetes/tree/v1.12.0/pkg/kubelet 部分的代码。
 
-计算资源的配额
-存储资源的配额
-对象数量的配额
-
-如果集群的总容量小于命名空间的配额总额，可能会产生资源竞争。这时会按照先到先得来处理。
-资源竞争和配额的更新都不会影响已经创建好的资源。
-1.1. 启动资源配额
-Kubernetes 的众多发行版本默认开启了资源......
+本文主要分析NewMainKubelet和kubelet.Run的主要部分，对于kubelet所包含的各种manager的执行逻辑和pod的生命周期管理逻辑待后续文章分......
         </div>
     </a>
     
@@ -437,7 +431,7 @@ Kubernetes 的众多发行版本默认开启了资源......
         </p>
         <div class="tags">
             
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+              <a href="/tags/#源码分析" title="源码分析">源码分析</a>
             
         </div>
     
@@ -447,57 +441,30 @@ Kubernetes 的众多发行版本默认开启了资源......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/install-k8s-by-kubespray/">
+    <a href="/article/source-analysis/kubelet/kubelet-cmd/">
         <h2 class="post-title">
-            [Kubernetes] 使用kubespray安装k8s集群
+            [源码分析] kubelet源码分析（一）之 NewKubeletCommand
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. 环境准备
-1.1. 部署机器
+            
+以下代码分析基于 kubernetes v1.12.0 版本。
+本文主要分析https://github.com/kubernetes/kubernetes/tree/v1.12.0/cmd/kubelet 部分的代码。
 
-以下机器为虚拟机
-
-
-
-
-机器IP
-主机名
-角色
-系统版本
-备注
-
-
-
-
-172.16.94.140
-kube-master-0
-k8s master
-Centos 4.17.14
-内存：3G
-
-
-172.16.94.141
-kube-node-41
-k8s node
-Centos 4.17.14
-内存：3G
-
-
-172.16.94.142
-kube-n......
+1. Main 函数
+具体代码参考：https://github.com/kubernetes/kubernetes/blob/v1.12.0/cmd/kubelet/......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 胡伟煌 on
-            2018-06-23
+            2018-06-24
         </p>
         <div class="tags">
             
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+              <a href="/tags/#源码分析" title="源码分析">源码分析</a>
             
         </div>
     
@@ -507,29 +474,33 @@ kube-n......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/install-k8s-by-minikube/">
+    <a href="/article/source-analysis/nfs-client-provisioner/">
         <h2 class="post-title">
-            [Kubernetes] 使用minikube安装k8s集群
+            [源码分析] nfs-client-provisioner源码分析
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
             
-以下内容基于Linux系统，特别为Ubuntu系统
+如果要开发一个Dynamic Provisioner，需要使用到the helper library。
 
-1. 安装kubectl
-1curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linu......
+1. Dynamic Provisioner
+1.1. Provisioner Interface
+开发Dynamic Provisioner需要实现Provisioner接口，该接口有两个方法，分别是：
+
+Provision：创建存储资源，并且返回一个PV对象。
+Delete：移除对......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 胡伟煌 on
-            2018-06-23
+            2018-06-24
         </p>
         <div class="tags">
             
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+              <a href="/tags/#源码分析" title="源码分析">源码分析</a>
             
         </div>
     
@@ -539,32 +510,32 @@ kube-n......
 
 <div class="post-preview">
 
-    <a href="/article/docker/install-docker/">
+    <a href="/article/source-analysis/csi-provisioner/">
         <h2 class="post-title">
-            [Docker] 安装Docker
+            [源码分析] csi-provisioner源码分析
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. CentOS 安装Docker
+            
+本文主要分析csi-provisioner的源码，关于开发一个Dynamic Provisioner，具体可参考nfs-client-provisioner的源码分析
 
-建议使用centos7
+1. Dynamic Provisioner
+1.1. Provisioner Interface
+开发Dynamic Provisioner需要实现Provisioner接口，该接口有两个方法，分别是：
 
-1.1. 安装Docker
-1.1.1. 卸载旧版本
-旧版本的Docker命名为docker或docker-engine，如果有安装旧版本，先卸载旧版本
-12345678910$ sudo yum remove -y docker \                  docker-client \              ......
+Provisi......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 胡伟煌 on
-            2018-06-23
+            2018-06-24
         </p>
         <div class="tags">
             
-              <a href="/tags/#Docker" title="Docker">Docker</a>
+              <a href="/tags/#源码分析" title="源码分析">源码分析</a>
             
         </div>
     
@@ -617,13 +588,13 @@ kube-n......
             
         
             
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
+            
+        
+            
         
             
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
-            
-        
-            
-            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
@@ -635,11 +606,11 @@ kube-n......
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
             
         
             
@@ -649,15 +620,17 @@ kube-n......
             
         
             
-        
-            
             <a href="/tags/#Linux" title="Linux" rel="2">Linux</a>
             
         
             
-            <a href="/tags/#Python" title="Python" rel="4">Python</a>
+        
+            
+            <a href="/tags/#源码分析" title="源码分析" rel="5">源码分析</a>
             
         
+            
+            <a href="/tags/#Python" title="Python" rel="4">Python</a>
             
         
     </div>
@@ -770,7 +743,7 @@ kube-n......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">11</span></li></ul>
     </div>
 
         <hr>
