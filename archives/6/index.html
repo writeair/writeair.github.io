@@ -306,20 +306,22 @@ wget ......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-commands/">
+    <a href="/article/kubernetes/kubernetes-basic-concepts/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes常用命令（kubectl）
+            [Kubernetes] Kubernetes基本概念
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. kubectl介绍
-kubectl controls the Kubernetes cluster manager.
-Usage:
-kubectl [flags]
-kubectl [command]
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
+            1. Master
+集群的控制节点，负责整个集群的管理和控制，kubernetes的所有的命令基本都是发给Master，由它来负责具体的执行过程。
+1.1. Master的组件
+
+kube-apiserver：资源增删改查的入口
+kube-controller-manager：资源对象的大总管
+kube-scheduler：负责资源调度（Pod调度）
+etcd Server:kubernet......
         </div>
     </a>
     
@@ -369,22 +371,20 @@ cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采�
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-basic-concepts/">
+    <a href="/article/kubernetes/kubernetes-commands/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes基本概念
+            [Kubernetes] Kubernetes常用命令（kubectl）
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. Master
-集群的控制节点，负责整个集群的管理和控制，kubernetes的所有的命令基本都是发给Master，由它来负责具体的执行过程。
-1.1. Master的组件
-
-kube-apiserver：资源增删改查的入口
-kube-controller-manager：资源对象的大总管
-kube-scheduler：负责资源调度（Pod调度）
-etcd Server:kubernet......
+            1. kubectl介绍
+kubectl controls the Kubernetes cluster manager.
+Usage:
+kubectl [flags]
+kubectl [command]
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
         </div>
     </a>
     
@@ -499,19 +499,18 @@ settings resources: securi......
 
 <div class="post-preview">
 
-    <a href="/article/etcd/etcd-introduction/">
+    <a href="/article/etcd/etcd-commands/">
         <h2 class="post-title">
-            [Etcd] Etcd介绍
+            [Etcd] Etcd常用命令
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. Etcd是什么（what）
-1.1. 概述
-etcd is a distributed, consistent key-value store for shared configuration and service discovery, with a focus on being:
-
-Secure: automatic TLS with optional client cert au......
+            一、etcdctl介绍
+etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可理解为命令工具集，可以方便我们在对服务进行测试或者手动修改数据库内容。etcdctl与其他xxxctl的命令原理及操作类似（例如kubectl，systemctl）。
+用法：etcdctl [global options] command [command options][args…]
+二、Etcd常用命......
         </div>
     </a>
     
@@ -578,13 +577,13 @@ Secure: automatic TLS with optional client cert au......
             
         
             
-            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
-            
-        
-            
         
             
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
+            
+        
+            
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
