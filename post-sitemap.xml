@@ -351,14 +351,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/machine-learning/machine-learning-concept/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-architecture/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -375,6 +367,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/machine-learning/machine-learning-concept/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/redis/redis-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -383,7 +383,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/docker-architecture/</loc>
+        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/dockerfile-usage/</loc>
+        <loc>http://www.huweihuang.com/article/docker/docker-architecture/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -439,14 +439,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/linux/supervisor-usage/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -464,6 +456,14 @@
 
     <url>
         <loc>http://www.huweihuang.com/article/kubernetes/kubernetes-pod-introduction/</loc>
+        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/article/linux/supervisor-usage/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -503,7 +503,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-client/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -511,7 +511,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-server/</loc>
+        <loc>http://www.huweihuang.com/article/docker/code-analysis/code-analysis-of-docker-client/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

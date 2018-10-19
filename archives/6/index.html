@@ -277,35 +277,6 @@ wget ......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
-        <h2 class="post-title">
-            [Kubernetes] cAdvisor介绍
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. cAdvisor简介
-​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/kubernetes/kubernetes-basic-concepts/">
         <h2 class="post-title">
             [Kubernetes] Kubernetes基本概念
@@ -341,69 +312,6 @@ etcd Server:kubernet......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/monitoring/kubernetes-cluster-monitoring/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes集群监控
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 概述
-1.1. cAdvisor
-cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/kubernetes-commands/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes常用命令（kubectl）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. kubectl介绍
-kubectl controls the Kubernetes cluster manager.
-Usage:
-kubectl [flags]
-kubectl [command]
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/kubernetes/kubernetes-network/">
         <h2 class="post-title">
             [Kubernetes] Kubernetes网络原理
@@ -418,6 +326,102 @@ kubectl [command]
 每个Pod都拥有一个独立的IP地址，而且假定所有Pod都在一个可以直接连通的、扁平的网络空间中，不管是否运行在同一Node上都可以通过Pod的IP来访问。
 k8s中Pod的IP是最小粒度IP。同一个Pod内所有的容器共享一个网络堆栈，该模型称为IP-per-Pod模型。
 Pod由docker0实际分配的IP，Pod内部看到的IP地址和......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
+        <h2 class="post-title">
+            [Kubernetes] cAdvisor介绍
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. cAdvisor简介
+​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/database/mysql-commonds/">
+        <h2 class="post-title">
+            [Database] Mysql常用命令
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 系统管理
+1.1. 连接mysql
+格式： mysql -h主机地址 -u用户名 －p用户密码
+连接本地：mysql -hlocalhost/127.0.0.1 -u用户名 －p用户密码
+连接远程：mysql -h主机地址 -u用户名 －p用户密码
+退出连接：exit
+1.2. 备份数据库
+1.导出整个数据库
+导出文件默认是存在mysql\bin目录下
+mysqldump -u 用户名......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Database" title="Database">Database</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/monitoring/kubernetes-cluster-monitoring/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes集群监控
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 概述
+1.1. cAdvisor
+cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
         </div>
     </a>
     
@@ -499,18 +503,19 @@ settings resources: securi......
 
 <div class="post-preview">
 
-    <a href="/article/etcd/etcd-commands/">
+    <a href="/article/etcd/etcd-introduction/">
         <h2 class="post-title">
-            [Etcd] Etcd常用命令
+            [Etcd] Etcd介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、etcdctl介绍
-etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可理解为命令工具集，可以方便我们在对服务进行测试或者手动修改数据库内容。etcdctl与其他xxxctl的命令原理及操作类似（例如kubectl，systemctl）。
-用法：etcdctl [global options] command [command options][args…]
-二、Etcd常用命......
+            1. Etcd是什么（what）
+1.1. 概述
+etcd is a distributed, consistent key-value store for shared configuration and service discovery, with a focus on being:
+
+Secure: automatic TLS with optional client cert au......
         </div>
     </a>
     
@@ -577,13 +582,13 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
             
         
             
+            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
+            
+        
+            
         
             
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
-            
-        
-            
-            <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
             
         
             
