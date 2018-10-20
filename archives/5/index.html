@@ -242,16 +242,17 @@ Go语言中自带有一个轻量级的测试框架testing和自带的go test命�
 
 <div class="post-preview">
 
-    <a href="/article/golang/web-programming/golang-http-execution-flow/">
+    <a href="/article/golang/govendor-usage/">
         <h2 class="post-title">
-            [Golang] GO HTTP执行流程
+            [Golang] govendor的使用
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. http包建立web服务器
-1234567891011121314151617181920212223242526package mainimport (    "fmt"    "log"    "net/http"    "strings")func sayhelloName(w http.ResponseWriter, r *http.Request) &#123;    r.P......
+            1. govendor简介
+golang工程的依赖包经常使用go get 的方式来获取，例如：go get github.com/kardianos/govendor ，会将依赖包下载到GOPATH的路径下。
+常用的依赖包管理工具有godep，govendor等，在Golang1.5之后，Go提供了 GO15VENDOREXPERIMENT 环境变量，用于将go build时的应用路径搜索调......
         </div>
     </a>
     
@@ -304,17 +305,16 @@ JSON是一种轻量级的数据交换语言。
 
 <div class="post-preview">
 
-    <a href="/article/golang/govendor-usage/">
+    <a href="/article/golang/web-programming/golang-http-execution-flow/">
         <h2 class="post-title">
-            [Golang] govendor的使用
+            [Golang] GO HTTP执行流程
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. govendor简介
-golang工程的依赖包经常使用go get 的方式来获取，例如：go get github.com/kardianos/govendor ，会将依赖包下载到GOPATH的路径下。
-常用的依赖包管理工具有godep，govendor等，在Golang1.5之后，Go提供了 GO15VENDOREXPERIMENT 环境变量，用于将go build时的应用路径搜索调......
+            1. http包建立web服务器
+1234567891011121314151617181920212223242526package mainimport (    "fmt"    "log"    "net/http"    "strings")func sayhelloName(w http.ResponseWriter, r *http.Request) &#123;    r.P......
         </div>
     </a>
     
@@ -495,20 +495,24 @@ Scheduler：
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-commands/">
+    <a href="/article/database/mysql-commonds/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes常用命令（kubectl）
+            [Database] Mysql常用命令
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. kubectl介绍
-kubectl controls the Kubernetes cluster manager.
-Usage:
-kubectl [flags]
-kubectl [command]
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
+            1. 系统管理
+1.1. 连接mysql
+格式： mysql -h主机地址 -u用户名 －p用户密码
+连接本地：mysql -hlocalhost/127.0.0.1 -u用户名 －p用户密码
+连接远程：mysql -h主机地址 -u用户名 －p用户密码
+退出连接：exit
+1.2. 备份数据库
+1.导出整个数据库
+导出文件默认是存在mysql\bin目录下
+mysqldump -u 用户名......
         </div>
     </a>
     
@@ -518,7 +522,7 @@ kubectl [command]
         </p>
         <div class="tags">
             
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+              <a href="/tags/#Database" title="Database">Database</a>
             
         </div>
     
@@ -579,9 +583,9 @@ kubectl [command]
             
         
             
-        
-            
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
+            
+        
             
         
             
@@ -642,10 +646,28 @@ kubectl [command]
         <ul class="list-inline">
             
             
+                <li>
+                    <a target="_blank" href="https://twitter.com/huweihuang">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
             
 
             
 
+            
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/huweihuang0">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
             
 
             
@@ -751,10 +773,28 @@ kubectl [command]
                 <ul class="list-inline text-center">
                 
                 
+                    <li>
+                        <a target="_blank" href="https://twitter.com/huweihuang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huweihuang0">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 

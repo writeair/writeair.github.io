@@ -240,20 +240,21 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
 
 <div class="post-preview">
 
-    <a href="/article/docker/docker-commands-principle/">
+    <a href="/article/docker/docker-architecture/">
         <h2 class="post-title">
-            [Docker] Docker常用命令原理图
+            [Docker] Docker整体架构图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. 基本概念
-1.1. image layer（镜像层）
-镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
+            一、Docker的总架构图
 
-根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
-只读层和读写层【top layer】的......
+docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
+
+用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
+Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
+Engine执行Docker内部的一系列工作，每一项工作都是......
         </div>
     </a>
     
@@ -273,19 +274,20 @@ etcdctl是一个命令行的客户端，它提供了一下简洁的命令，可�
 
 <div class="post-preview">
 
-    <a href="/article/docker/code-analysis/code-analysis-of-docker-daemon/">
+    <a href="/article/docker/docker-commands-principle/">
         <h2 class="post-title">
-            [Docker] Docker源码分析（二）之Docker Daemon
+            [Docker] Docker常用命令原理图
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker Daemon架构示意图
+            1. 基本概念
+1.1. image layer（镜像层）
+镜像可以看成是由多个镜像层叠加起来的一个文件系统，镜像层也可以简单理解为一个基本的镜像，而每个镜像层之间通过指针的形式进行叠加。
 
-Docker Daemon是Docker架构中运行在后台的守护进程，大致可以分为Docker Server、Engine和Job三部分。
-Docker Daemon可以认为是通过Docker Server模块接受Docker Client的请求，并在Engine中处理请求，然后根据请求类型，创建出指定的Job并运行。
-运行过程的作用有以下几种可能：......
+根据上图，镜像层的主要组成部分包括镜像层id，镜像层指针【指向父层】，元数据【layer metadata】包含了docker构建和运行的信息还有父层的层次信息。
+只读层和读写层【top layer】的......
         </div>
     </a>
     
@@ -369,21 +371,23 @@ Docker......
 
 <div class="post-preview">
 
-    <a href="/article/docker/docker-architecture/">
+    <a href="/article/docker/dockerfile-usage/">
         <h2 class="post-title">
-            [Docker] Docker整体架构图
+            [Docker] Dockerfile使用说明
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Docker的总架构图
+            一、Dockerfile的说明
+dockerfile指令忽略大小写，建议大写，#作为注释，每行只支持一条指令，指令可以带多个参数。
+dockerfile指令分为构建指令和设置指令。
 
-docker是一个C/S模式的架构，后端是一个松耦合架构，模块各司其职。
+构建指令：用于构建image，其指定的操作不会在运行image的容器中执行。
+设置指令：用于设置image的属性，其指定的操作会在运行image的容器中执行。
 
-用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
-Docker Daemon作为Docker架构中的主体部分，首先提供Server的功能使其可以接受Docker Client的请求；
-Engine执行Docker内部的一系列工作，每一项工作都是......
+二、Dockerfile指令说明
+1、FROM（......
         </div>
     </a>
     
@@ -403,23 +407,19 @@ Engine执行Docker内部的一系列工作，每一项工作都是......
 
 <div class="post-preview">
 
-    <a href="/article/docker/dockerfile-usage/">
+    <a href="/article/docker/code-analysis/code-analysis-of-docker-daemon/">
         <h2 class="post-title">
-            [Docker] Dockerfile使用说明
+            [Docker] Docker源码分析（二）之Docker Daemon
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            一、Dockerfile的说明
-dockerfile指令忽略大小写，建议大写，#作为注释，每行只支持一条指令，指令可以带多个参数。
-dockerfile指令分为构建指令和设置指令。
+            一、Docker Daemon架构示意图
 
-构建指令：用于构建image，其指定的操作不会在运行image的容器中执行。
-设置指令：用于设置image的属性，其指定的操作会在运行image的容器中执行。
-
-二、Dockerfile指令说明
-1、FROM（......
+Docker Daemon是Docker架构中运行在后台的守护进程，大致可以分为Docker Server、Engine和Job三部分。
+Docker Daemon可以认为是通过Docker Server模块接受Docker Client的请求，并在Engine中处理请求，然后根据请求类型，创建出指定的Job并运行。
+运行过程的作用有以下几种可能：......
         </div>
     </a>
     
@@ -520,9 +520,9 @@ Flannel官网：https://github.com/coreos/flannel
             
         
             
-        
-            
             <a href="/tags/#Etcd" title="Etcd" rel="3">Etcd</a>
+            
+        
             
         
             
@@ -583,10 +583,28 @@ Flannel官网：https://github.com/coreos/flannel
         <ul class="list-inline">
             
             
+                <li>
+                    <a target="_blank" href="https://twitter.com/huweihuang">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
             
 
             
 
+            
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/huweihuang0">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
             
 
             
@@ -692,10 +710,28 @@ Flannel官网：https://github.com/coreos/flannel
                 <ul class="list-inline text-center">
                 
                 
+                    <li>
+                        <a target="_blank" href="https://twitter.com/huweihuang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huweihuang0">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
