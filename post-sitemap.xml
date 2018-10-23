@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.huweihuang.com/article/essay/something-has-to-be-written/</loc>
+        <lastmod>2018-10-23T11:02:47.430Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.huweihuang.com/article/source-analysis/nfs-client-provisioner/</loc>
         <lastmod>2018-10-19T12:27:17.852Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -439,7 +447,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -447,7 +455,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/golang/golang-packages/</loc>
+        <loc>http://www.huweihuang.com/article/golang/golang-object-oriented-programming/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -479,7 +487,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -487,7 +495,7 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/heapster-introduction/</loc>
+        <loc>http://www.huweihuang.com/article/kubernetes/monitoring/influxdb-introduction/</loc>
         <lastmod>2018-06-24T07:11:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
