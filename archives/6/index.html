@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://ozilwgpje.bkt.clouddn.com/blog/home.jpg?imageslim') 
+            background-image: url('https://res.cloudinary.com/dqxtn0ick/image/upload/v1542285471/header/home.jpg') 
             /*config*/
         
     }
@@ -209,53 +209,20 @@
 
 <div class="post-preview">
 
-    <a href="/article/database/mysql-commonds/">
+    <a href="/article/kubernetes/kubernetes-network/">
         <h2 class="post-title">
-            [Database] Mysql常用命令
+            [Kubernetes] Kubernetes网络原理
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. 系统管理
-1.1. 连接mysql
-格式： mysql -h主机地址 -u用户名 －p用户密码
-连接本地：mysql -hlocalhost/127.0.0.1 -u用户名 －p用户密码
-连接远程：mysql -h主机地址 -u用户名 －p用户密码
-退出连接：exit
-1.2. 备份数据库
-1.导出整个数据库
-导出文件默认是存在mysql\bin目录下
-mysqldump -u 用户名......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Database" title="Database">Database</a>
-            
-        </div>
-    
+            1. kubernetes网络模型
+1.1. 基础原则
 
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
-        <h2 class="post-title">
-            [Kubernetes] cAdvisor介绍
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. cAdvisor简介
-​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
+每个Pod都拥有一个独立的IP地址，而且假定所有Pod都在一个可以直接连通的、扁平的网络空间中，不管是否运行在同一Node上都可以通过Pod的IP来访问。
+k8s中Pod的IP是最小粒度IP。同一个Pod内所有的容器共享一个网络堆栈，该模型称为IP-per-Pod模型。
+Pod由docker0实际分配的IP，Pod内部看到的IP地址和......
         </div>
     </a>
     
@@ -275,19 +242,16 @@ mysqldump -u 用户名......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/monitoring/heapster-introduction/">
+    <a href="/article/kubernetes/monitoring/cadvisor-introduction/">
         <h2 class="post-title">
-            [Kubernetes] Heapster介绍
+            [Kubernetes] cAdvisor介绍
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. heapster简介
-Heapster是容器集群监控和性能分析工具，天然的支持Kubernetes和CoreOS。
-Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都会运行cAdvisor，它会收集本机以及容器的监控数据(cpu,memory,filesystem,network,uptime)。
-2. heapster部署与配置
-......
+            1. cAdvisor简介
+​	cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor对外提供......
         </div>
     </a>
     
@@ -343,6 +307,38 @@ wget ......
 
 <div class="post-preview">
 
+    <a href="/article/kubernetes/monitoring/heapster-introduction/">
+        <h2 class="post-title">
+            [Kubernetes] Heapster介绍
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. heapster简介
+Heapster是容器集群监控和性能分析工具，天然的支持Kubernetes和CoreOS。
+Kubernetes有个出名的监控agent—cAdvisor。在每个kubernetes Node上都会运行cAdvisor，它会收集本机以及容器的监控数据(cpu,memory,filesystem,network,uptime)。
+2. heapster部署与配置
+......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/kubernetes/kubernetes-commands/">
         <h2 class="post-title">
             [Kubernetes] Kubernetes常用命令（kubectl）
@@ -357,6 +353,36 @@ Usage:
 kubectl [flags]
 kubectl [command]
 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 胡伟煌 on
+            2017-08-13
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/kubernetes/monitoring/kubernetes-cluster-monitoring/">
+        <h2 class="post-title">
+            [Kubernetes] Kubernetes集群监控
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1. 概述
+1.1. cAdvisor
+cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
         </div>
     </a>
     
@@ -411,20 +437,24 @@ etcd Server:kubernet......
 
 <div class="post-preview">
 
-    <a href="/article/kubernetes/kubernetes-network/">
+    <a href="/article/database/mysql-commonds/">
         <h2 class="post-title">
-            [Kubernetes] Kubernetes网络原理
+            [Database] Mysql常用命令
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            1. kubernetes网络模型
-1.1. 基础原则
-
-每个Pod都拥有一个独立的IP地址，而且假定所有Pod都在一个可以直接连通的、扁平的网络空间中，不管是否运行在同一Node上都可以通过Pod的IP来访问。
-k8s中Pod的IP是最小粒度IP。同一个Pod内所有的容器共享一个网络堆栈，该模型称为IP-per-Pod模型。
-Pod由docker0实际分配的IP，Pod内部看到的IP地址和......
+            1. 系统管理
+1.1. 连接mysql
+格式： mysql -h主机地址 -u用户名 －p用户密码
+连接本地：mysql -hlocalhost/127.0.0.1 -u用户名 －p用户密码
+连接远程：mysql -h主机地址 -u用户名 －p用户密码
+退出连接：exit
+1.2. 备份数据库
+1.导出整个数据库
+导出文件默认是存在mysql\bin目录下
+mysqldump -u 用户名......
         </div>
     </a>
     
@@ -434,37 +464,7 @@ Pod由docker0实际分配的IP，Pod内部看到的IP地址和......
         </p>
         <div class="tags">
             
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/kubernetes/monitoring/kubernetes-cluster-monitoring/">
-        <h2 class="post-title">
-            [Kubernetes] Kubernetes集群监控
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 概述
-1.1. cAdvisor
-cAdvisor对Node机器上的资源及容器进行实时监控和性能数据采集，包括CPU使用情况、内存使用情况、网络吞吐量及文件系统使用情况，cAdvisor集成在Kubelet中，当kubelet启动时会自动启动cAdvisor，即一个cAdvisor仅对一台Node机器进行监控。kubelet的启动参数–cadvisor-port可以定义cAdvisor......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 胡伟煌 on
-            2017-08-13
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+              <a href="/tags/#Database" title="Database">Database</a>
             
         </div>
     
@@ -581,13 +581,13 @@ settings resources: securi......
             
         
             
-            <a href="/tags/#随笔" title="随笔" rel="2">随笔</a>
-            
-        
-            
         
             
             <a href="/tags/#Docker" title="Docker" rel="7">Docker</a>
+            
+        
+            
+            <a href="/tags/#随笔" title="随笔" rel="2">随笔</a>
             
         
             
@@ -603,11 +603,11 @@ settings resources: securi......
             
         
             
-            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
+            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
             
         
             
-            <a href="/tags/#Kubernetes" title="Kubernetes" rel="21">Kubernetes</a>
+            <a href="/tags/#Golang" title="Golang" rel="13">Golang</a>
             
         
             
@@ -955,7 +955,7 @@ settings resources: securi......
 	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
     <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
 <!-- Image to hack wechat -->
-<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- <img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" /> -->
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

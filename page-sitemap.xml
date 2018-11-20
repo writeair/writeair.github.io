@@ -8,28 +8,28 @@
     
     <url>
         <loc>http://www.huweihuang.com/about/</loc>
-        <lastmod>2018-10-23T11:02:36.785Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://www.huweihuang.com/404.html</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <lastmod>2018-11-15T13:03:06.259Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.huweihuang.com/archive/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <lastmod>2018-11-15T13:02:48.586Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.huweihuang.com/tags/</loc>
-        <lastmod>2018-06-24T07:11:18.000Z</lastmod>
+        <lastmod>2018-11-15T13:02:30.308Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.huweihuang.com/404.html</loc>
+        <lastmod>2018-11-15T13:02:04.193Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
