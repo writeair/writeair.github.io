@@ -10,14 +10,15 @@
     <meta name="description" content="">
     <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [随笔] 写给自己的话 | 生活の开始
+          [Electronics] DIY改造——无线智能断路器
         
     </title>
 
-    <link rel="canonical" href="http://www.huweihuang.com/article/essay/something-has-to-be-written/">
+    <link rel="canonical" href="http://www.huweihuang.com/article/ethereum/ethereum-introduction/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -41,6 +42,20 @@
     <!-- Hux change font-awesome CDN to qiniu -->
     <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <!-- ga & ba script hoook -->
     <script></script>
@@ -71,14 +86,16 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#随笔" title="随笔">随笔</a>
+                              <a class="tag" href="/tags/#Blockchain" title="Blockchain">Blockchain</a>
+                            
+                              <a class="tag" href="/tags/#Ethereum" title="Ethereum">Ethereum</a>
                             
                         </div>
-                        <h1>[随笔] 写给自己的话</h1>
+                        <h1>[Ethereum] 以太坊系列（一）之以太坊介绍</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
-                            Posted by blankair on
-                            2018-11-22
+                            Posted by 胡伟煌 on
+                            2018-08-11
                         </span>
                     </div>
                 
@@ -102,10 +119,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">blankair</a>
+            <a class="navbar-brand" href="/">胡伟煌</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
         <div id="huxblog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -190,21 +212,42 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="写给自己的话">写给自己的话</h1>
-<p>​　　什么时候开始萌生出拥有一个自己博客的念头，并且无法遏制的开始付诸行动，于是在阿里云我冒了一个独立的个人域名，开始了搭建博客之旅！</p>
-<p>​　　我非常希望能有一个能安放自己的小地方，我看过其他写博客的网站，但他们总是让我感觉很压抑，杂乱的域名总没能给我带来家的感觉，一天我看到了学长的个人博客，顿时发现了新的大陆，原来github也是可以建博客的，原来我也可以获得一个专属于自己的小域名，当输入<a href="https://cailh.club">cailh.club</a>，页面返回错误，我激动得不能自己，我知道域名成功了，之后我只需要解析域名就能将github中的家安上cailh.club的门牌，虽然在github中写博客远没有在其他网站轻松，但是我感觉到了轻松。</p>
-<p>​　　从小到大自己做的东西从来舍不得丢掉，堆在小箱子里，每一次动手画，动手做，动手写都是我一生不可分割的一部分，从幼稚到成熟，他们见证了我的成长。从现在开始这个独属于我的空间将继续记录我的成长。我知道做一件事情是需要去整理下来的，或许有些项目我完成，但是所涉及的知识点零零散散，如果你不整理，那一定会给你凌乱的感觉，而现在就不一样了，这个空间给了我整理自己的动力。就像自己的家一样，还记得每次同学来做客的时候我总是希望把家里弄得整洁一点，给人家留下好印象。</p>
-<p>​　　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年11月22日晚</p>
-
+                <h2 id="1-以太坊的介绍">1. 以太坊的介绍</h2>
+<p>以太坊是一个开放的<code>区块链平台</code>，允许任何人在平台中建立和使用通过区块链技术运行的去中心化应用，同比特币一样，以太坊由全球范围的很多人共同创建，不受任何个人控制。</p>
+<h2 id="2-下一代区块链">2. 下一代区块链</h2>
+<p>区块链技术是比特币的底层技术。在比特币中，分布式数据库被设想为一个<code>账户余额表（总账）</code>，交易通过比特币的转移来实现个体之间无需信任基础的金融活动。以太坊试图实现一个总体上完全无需信任基础的智能合约平台。</p>
+<h2 id="3-以太坊虚拟机">3. 以太坊虚拟机</h2>
+<p>以太坊是<code>可编程</code>的区块链，不会给用户一系列预先设置好的操作，允许用户自定义复杂的操作。以太坊狭义上是指一系列定义去中心化应用平台的协议，核心是<code>以太坊虚拟机（EVM）</code>，其可以执行任意复杂算法的编码。以太坊是<code>图灵完备</code>的。</p>
+<p>以太坊也有一个点对点的网络协议，以太坊区块链数据库由各网络节点来维护和更新，每个节点运行以太坊虚拟机并执行相同的指令，保证区块链的一致性。</p>
+<h2 id="4-以太坊工作原理">4. 以太坊工作原理</h2>
+<p>比特币可以看作是关于交易的列表，而以太坊的基础单元是<code>账户</code>。以太坊跟踪每个账户的状态，以太坊上所有状态转换都是账户之间价值和信息的转换。</p>
+<p>账户分为两类：</p>
+<ul>
+<li>外部账户（EOA）：由私人密钥控制</li>
+<li>合约账户：由合约代码控制，只能由外部账户“激活”。</li>
+</ul>
+<p><code>智能合约</code>：指合约账户中的编码，即交易被发送给该账户时所运行的程序。用户可以通过在区块链中部署编码来创建新的合约。</p>
+<p>只有当外部账户发出指令时，合约账户才会执行相应的操作，是为了保证正确执行所有操作。</p>
+<p>和比特币一样，以太坊用户需要向网络支付少量的交易费用，通过<code>以太币</code>的形式支付。这样避免受到类似DDos的攻击。</p>
+<p>交易费用由节点收集，节点使网络生效。“矿工”就是以太坊网络中收集、传播、确认和执行交易的节点。矿工将交易打包，打包的数据成为区块，打包的过程就是将以太坊中<code>账户的状态</code>更新的过程。矿工们相互竞争挖矿，成功挖矿的可以得到以太币的奖励。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.ethdocs.org/en/latest/introduction/what-is-ethereum.html" target="_blank" rel="noopener">http://www.ethdocs.org/en/latest/introduction/what-is-ethereum.html</a></li>
+</ul>
+<div><h2 id="推荐文章">推荐文章<span style="font-size:0.45em; color:gray"></span></h2><ul><li><a href="http://www.huweihuang.com/article/ethereum/ethereum-account-management/">[Ethereum] 以太坊系列（二）之账户管理</a></li><li><a href="http://www.huweihuang.com/article/blockchain/blockchain-keys&addresses/">[Blockchain] 区块链系列（四）之密钥和地址</a></li><li><a href="http://www.huweihuang.com/article/blockchain/blockchain-transactions/">[Blockchain] 区块链系列（六）之比特币交易</a></li></ul></div>
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/article/source-analysis/kubelet/kubelet-cmd/" data-toggle="tooltip" data-placement="top" title="[源码分析] kubelet源码分析（一）之 NewKubeletCommand">&larr; Previous Post</a>
+                        </li>
                     
-                        <li class="next" style="text-align:center;">
-                            <a href="/article/ethereum/ethereum-introduction/" data-toggle="tooltip" data-placement="top" title="[Electronics] DIY改造——无线智能断路器" >Next Post &rarr;</a>
+                    
+                        <li class="next">
+                            <a href="/article/ethereum/ethereum-account-management/" data-toggle="tooltip" data-placement="top" title="[Ethereum] 以太坊系列（二）之账户管理">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -213,26 +256,46 @@
                 
                 <!-- require APlayer -->
                 
-                  
-                
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
                     <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
-                
+    
                     <div class="aplayer"
-                        data-id="002vbWwe3ZmffT"
-                        data-server="tencent"
-                        data-type="song"
-                        data-fixed="false" >
+                        data-id="2423410161"
+                        data-server="netease"
+                        data-type="playlist"
+                        data-fixed="true" >
                     </div>
+                
+                
                 
 
                 <br>
 
-             
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+                    <!-- disqus 评论框 start -->
+                    <div class="comment">
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM0Mi8xMDg3OQ=="></div>
+                    </div>
+                    <!-- disqus 评论框 end -->
+                
 
             </div>
             
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
 
   
     <style>
@@ -246,40 +309,42 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#总得写点什么"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">写给自己的话</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-以太坊的介绍"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. 以太坊的介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-下一代区块链"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. 下一代区块链</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-以太坊虚拟机"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. 以太坊虚拟机</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-以太坊工作原理"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. 以太坊工作原理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#推荐文章"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">推荐文章</span></a></li></ol>
         
         </div>
       </aside>
     
 
                 
-            <!-- Sidebar Container 
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
-             -->
+
                 <!-- Featured Tags -->
                 
-              <!--  <section>-->
-                     <!--  no hr -->
-                 <!--    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#随笔" title="随笔">随笔</a>
+                          <a class="tag" href="/tags/#Blockchain" title="Blockchain">Blockchain</a>
+                        
+                          <a class="tag" href="/tags/#Ethereum" title="Ethereum">Ethereum</a>
                         
                     </div>
-                </section>-->
+                </section>
                 
 
-                <!-- Friends Blog
+                <!-- Friends Blog -->
                 
-                <hr> -->
-              <!--  <h5>FRIENDS</h5>-->
-             
-                    <!--    <ul class="list-inline">
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
 
-                        <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog blankair</a></li>
+                    
+                        <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog 胡伟煌</a></li>
                     
                         <li><a href="https://www.huweihuang.com/kubernetes-notes" target="_blank">Kubernetes 学习笔记</a></li>
                     
@@ -287,12 +352,12 @@
                     
                         <li><a href="http://huweihuang.net/" target="_blank">huweihuang.net</a></li>
                     
-                        <li><a href="http://dockone.io/people/胡伟煌" target="_blank">DockOne blankair</a></li>
+                        <li><a href="http://dockone.io/people/胡伟煌" target="_blank">DockOne 胡伟煌</a></li>
                     
-                        <li><a href="https://yq.aliyun.com/u/huweihuang" target="_blank">阿里云栖社区 blankair</a></li>
-                  
+                        <li><a href="https://yq.aliyun.com/u/huweihuang" target="_blank">阿里云栖社区 胡伟煌</a></li>
+                    
                 </ul>
-                  -->
+                
             </div>
         </div>
     </div>
@@ -359,7 +424,7 @@
 
 
     <!-- Footer -->
-    <!-- Footer 
+    <!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
@@ -415,13 +480,13 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; blankair 2018 
+                    Copyright &copy; 胡伟煌 2018 
                     <br>
                     Theme by <a href="http://beantech.org">BeanTech</a> 
                     <span style="display: inline-block; margin: 0 5px;">
                         <i class="fa fa-heart"></i>
                     </span> 
-                    re-Ported by <a href="http://www.huweihuang.com">blankair</a> | 
+                    re-Ported by <a href="http://www.huweihuang.com">胡伟煌</a> | 
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="91px" height="20px"
@@ -432,7 +497,7 @@
         </div>
     </div>
 </footer>
--->
+
 <!-- jQuery -->
 <script src="/js/jquery.min.js"></script>
 
@@ -455,6 +520,23 @@
     }
 </script>
 
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
 
 
 <!-- jquery.tagcloud.js -->
