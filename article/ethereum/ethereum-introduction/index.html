@@ -217,12 +217,38 @@
 <p><div><img src="http://img.027cgb.com/611266/%E5%85%B3%E9%97%AD.jpg" alt="低电平"><div style="text-align:center;">光耦输入端低电平</div></div></p>  
 <p>​　　单片机我们采用stm32f103，需要开两路ADC采样，一路用来检测电流电压，另一路用来检测短路，另外我们需要一个IO口输出短路信号给驱动电路，wifi模块我们采用esp8266，只占用一组串口TXD，RXD，采用服务器模式，自身为热点，传递数据。</p>
 <ul>
-<p>​AT指令设置ESP8266为热点</p>
+<p>​<strong>AT指令设置ESP8266为热点</strong></p>
 <li>–AT+CWMODE=2 </li>
 <li>–AT+RST </li>
 <li>–AT+CWSAP=”ATK-ESP8266”,“12345678”,1,4</li>
 <li>–AT+CIPMUX=1 </li>
 <li>–AT+CIPSERVER=1,8086</li>
+</ul>
+<p>​详细的代码会在工程中给出......传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据</p>
+
+<p><img src="http://img.027cgb.com/611266/%E5%9B%BE%E7%89%871.png" alt="HBUILDER"></p>
+<ul>
+<p>​<strong>GET——应该会返回一个电流电压信息</strong></p>
+<li>–GET https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88 HTTP/1.1</li>
+<li>–AX-LC-Id: OnBP6lCuzl8MmAJbtbHyvglI-gzGzoHsz</li>
+<li>–X-LC-Key: XXXXXXXXXXXXXXXXXXXX</li>
+<li>–AContent-Type: application/json</li>
+<li>–Host: onbp6lcu.api.lncld.net</li>
+</ul>
+<p>​之后我试了一下想用ESp8266链接手机wifi，访问数据库一直没有成功，每次都返回301（重定向），至今还未解决。之后通过抓包工具发送GET数据成功返回，用CMD的telnet模拟发送GET返回31，用espAT指令发送GET也返回301，希望我早点发现那里弄错了吧！</p>
+<ul>
+<p>​<strong>GET——应该会返回301，我也不知道为什么，现在这里记下来等以后解决了再来补充！</strong></p>
+<li>–AT+CWMODE=3</li>
+<li>–AT+RST</li>
+<li>–AT+CWJAP="1154515863","11545158631"</li>
+<li>–AT+CIFSR</li>
+<li>–AT+CIPSTART="TCP","onbp6lcu.api.lncld.net",80</li>
+<li>–AT+CIPSEND=120</li>
+<li>–GET /1.1/classes/Post HTTP/1.1,80</li>
+<li>–X-LC-Id:OnBP6lCuzl8MmAJbtbHyvglI-gzGzoHsz</li>
+<li>–X-LC-Key:HkCjTsi8nW8VJFN1XYKe5sVD,80</li>
+<li>–Content-Type:application/json</li>
+<li>–AHOST:onbp6lcu.api.lncld.net,80</li>
 </ul>
 <p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年11月22日晚</p>
                 <hr>
