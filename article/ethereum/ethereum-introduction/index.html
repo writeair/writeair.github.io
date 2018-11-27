@@ -196,9 +196,9 @@
 
                 <h2 id="1-断路器的介绍"> 1. 断路器的介绍</h2>
 <p>​　　断路器可用来分配电能，不频繁地启动异步电动机，对电源线路及电动机等实行保护，当它们发生严重的过载或者短路及欠压等故障时能自动切断电路，其功能相当于熔断器式开关与过欠热继电器等的组合。而且在分断故障电流后一般不需要变更零部件。目前，已获得了广泛的应用。</p>
-<p><img src="http://img.027cgb.com/611266/QQ%E6%88%AA%E5%9B%BE20181106193331.png" alt="断路器"></p>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/MNOgPmoL5fQQTh2Ia9NxlwAnI6gP7UuIoepy1NSn848!/b/dFIBAAAAAAAA&bo=6gGyAQAAAAADJ1o!&rf=viewer_4" alt="断路器"></p>
 <p>　　这次改造断路器的初衷是赵老师让我们在今年电赛开始前练一练手，并且做一个实际的东西检验我们所学，刚开始的时候我们连断路器是一个什么东东都不懂,听到老师让我们改造断路器让他能够远程控制的时候我是一脸问号？？？不过慢慢地在我们查阅网上的各种资料之后，我终于明白我们到底是要做什么东西了，简单的来讲就是让断路器连上互联网（断路器相当于开关）。至此如果大规模的智能断路器组成通信控制网络后，控制、保护可实现的智能化程度将极大地提高，如供电系统中保护的动态配合。智能断路器具有对自身工作状态的监测、控制和保护的功能，可靠性增强，将大大降低运营成本以及因故障造成的损失。</p>
-<p><img src="http://img.027cgb.com/611266/timg.jpg" alt="意不意外"></p>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/Od76YUMThg9I.4oe5LJlkJK8OvwbAJiC59g32RedE7U!/b/dDEBAAAAAAAA&bo=CgIJAgAAAAARFyM!&rf=viewer_4" alt="意不意外"></p>
 <h2 id="2-系统分析"> 2.系统分析</h2>
 <p><strong>改造目标</strong></p>
 <p>　　根据老师对我们提出的设想我们细化后归纳出一下几个改造方向：</p>
@@ -207,14 +207,14 @@
 <li>–Wifi上传数据：采用ESP8266构建局域网接收和发送数据。</li>
 <li>–电流电压检测：采集电路的电流电压信息。</li>
 </ul>
-<p><div><img src="http://img.027cgb.com/611266/%E7%B3%BB%E7%BB%9F%E6%A1%86%E5%9B%BE.jpg" alt="框图"><div style="text-align:center;">系统框图</div></div></p>
+<p><div><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/aBRzyg1F.emg3F9Z7qkjRcvl1.k5rbaQspfLwoZQMdw!/b/dDABAAAAAAAA&bo=GAXkAgAAAAARF9s!&rf=viewer_4" alt="框图"><div style="text-align:center;">系统框图</div></div></p>
 <p>这里有两个需要我们注意的地方1：断路器中脱扣器要如何驱动，2：单片机与wifi模块如何通讯，其他还是比较简单的，比较只是一个初步的改造。</p>
 <p><strong>脱扣器</strong></p>
 <p>​　　拆开断路器我发现，它的内部是一个电磁脱扣器,经过电压源的测试在脱扣器两端的电压达到21V时，脱扣器能产生大于弹簧的拉力，使触头弹出。</p>
 <p style="color: blue; background: #eee;">　　电磁脱扣器与被保护电路串联。线路中通过正常电流时，电磁铁产生的电磁力小于反作用力弹簧的拉力，衔铁不能被电磁铁吸动，断路器正常运行。当线路中出现短路故障时，电流超过正常电流的若干倍，电磁铁产生的电磁力大于反作用力弹簧的作用力，衔铁被电磁铁吸动通过传动机构推动自由脱扣机构释放主触头。主触头在分闸弹簧的作用下分开切断电路起到短路保护作用。</p>
 <p>​　　所以我们采用了如下图的驱动方式,通过市电本身的电流通过脱扣器导致脱口（偷偷说：我才不会告诉你当在脱扣器两端电压为220V交流电的时候，脱扣器会发出剧烈的电流振动声音，然后我作死的持续导通光耦，导致脱扣器冒出一阵火花，然后光荣阵亡。结束语：在加市电的时候记得在实验室的实验桌子上通过变压器获取电流————————实验桌子上自带断路器，在触电的时候可以及时断开供电，而且可以给电脑和电压源等实验仪器供电，然后将插线板的电取到变压器两端再给板子供电。目的是：隔离板子与实验仪器，避免板子阵亡电脑也阵亡了！）单片机在收到断路请求的时候会在引脚产生一个持续高电平，导通光耦，由于两个500欧的电阻分压，导通场效应管，使1000MΩ的电阻短路，使得电压都加在脱扣器两端，脱扣器脱扣电流中断。其中光耦是用来隔离单片机和220V交流电的，避免单片机被损坏。</p>
-<p><div><img src="http://img.027cgb.com/611266/%E6%89%93%E5%BC%80.jpg" alt="高电平"><div style="text-align:center;">光耦输入端高电平</div></div></p>
-<p><div><img src="http://img.027cgb.com/611266/%E5%85%B3%E9%97%AD.jpg" alt="低电平"><div style="text-align:center;">光耦输入端低电平</div></div></p>  
+<p><div><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/YoAtoLLmWHo5Q.fvYbOcdmt4Ig62xSCD4fnlDBT0koc!/b/dFIBAAAAAAAA&bo=kAWIAgAAAAARFz8!&rf=viewer_4" alt="高电平"><div style="text-align:center;">光耦输入端高电平</div></div></p>
+<p><div><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/61Hb6m3gQ9c8*e8qyJ3k4pzSE4geyr3OPk4ZwOBCaFs!/b/dEgBAAAAAAAA&bo=dwVVAgAAAAARFwU!&rf=viewer_4" alt="低电平"><div style="text-align:center;">光耦输入端低电平</div></div></p>  
 <p>​　　单片机我们采用stm32f103，需要开两路ADC采样，一路用来检测电流电压，另一路用来检测短路，另外我们需要一个IO口输出短路信号给驱动电路，wifi模块我们采用esp8266，只占用一组串口TXD，RXD，采用服务器模式，自身为热点，传递数据。</p>
 <ul>
 <p>​<strong>AT指令设置ESP8266为热点</strong></p>
@@ -224,9 +224,9 @@
 <li>–AT+CIPMUX=1 </li>
 <li>–AT+CIPSERVER=1,8086</li>
 </ul>
-<p>​详细的代码会在工程中给出......传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据</p>
+<p>​详细的代码会在工程中给出......传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据.</p>
 
-<p><img src="http://img.027cgb.com/611266/%E5%9B%BE%E7%89%871.png" alt="HBUILDER"></p>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/exISG57YmEdgsLDBD8EKBsSqyvtsgAZ6XDDxKV44PUc!/b/dDYBAAAAAAAA&bo=BwVHAgAAAAARF2c!&rf=viewer_4" alt="HBUILDER"></p>
 <ul>
 <p>​<strong>GET——应该会返回一个电流电压信息</strong></p>
 <li>–GET https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88 HTTP/1.1</li>
@@ -235,7 +235,7 @@
 <li>–AContent-Type: application/json</li>
 <li>–Host: onbp6lcu.api.lncld.net</li>
 </ul>
-<p>​之后我试了一下想用ESp8266链接手机wifi，访问数据库一直没有成功，每次都返回301（重定向），至今还未解决。之后通过抓包工具发送GET数据成功返回，用CMD的telnet模拟发送GET返回31，用espAT指令发送GET也返回301，希望我早点发现那里弄错了吧！</p>
+<p>​之后我试了一下想用ESp8266链接手机wifi，访问数据库一直没有成功，每次都返回301（重定向），至今还未解决。之后通过抓包工具发送GET数据成功返回，用CMD的telnet模拟发送GET返回301，用espAT指令发送GET也返回301，希望我早点发现那里弄错了吧！</p>
 <ul>
 <p>​<strong>GET——应该会返回301，我也不知道为什么，现在这里记下来等以后解决了再来补充！</strong></p>
 <li>–AT+CWMODE=3</li>
