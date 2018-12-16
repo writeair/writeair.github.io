@@ -194,9 +194,58 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="制作进度介绍"> 1.制作进度</h2>
-<p>​　　2018年12月9日：传感器模块制作完毕，测试通过，并安装于以前的车模上，新L车模估计得12月中旬才能发货，只能拿以前的暂时安装。</p>
+                <h2 id="制作进度介绍"> 1-制作进度</h2>
+<p>2018年11月日，驱动模块焊好了，因为去年只做了单路的驱动板，这次在不知道车模信息的情况下把双路的驱动做好了，不过好像出了点小问题</p>                
+<p>​2018年12月9日：传感器模块制作完毕，测试通过，并安装于以前的车模上，新L车模估计得12月中旬才能发货，只能拿以前的暂时安装。</p>
 <p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/.HXBtyxBbMi1bnOhZFLh8QR7A1zl0TIXz1dydvtqNoM!/b/dNwAAAAAAAAA&bo=oAU4BAAAAAARF7k!&rf=viewer_4" alt="电磁部分"></p>
+<h2 id="模块调试"> 2-模块调试</h2>
+<h3 id="超声波"> 2.超声波模块-2018-12-12</h3>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/P1ifz4g5OAHHAs6y3AqUrmWVpqn4vi9DE8aXpInNqcM!/b/dLYAAAAAAAAA&bo=qQEXAgAAAAAKB5Y!&rf=viewer_4" alt="超声波模块"></p>
+<p>    超声波模块需要5V供电，Trig是触发信号输入端（需要送入5-15us的脉冲信号），echo是返回的距离信息，返回的是一段方波，方波的高电平时间就是超声波从发送到返回所用的时间。</p> 
+<p>    测量距离=(高电平时间*340)/2,340是声速。</p> 
+<p>    所以在使用超声波的时候我们最重要的是如何读取高电平的时间，有许多的想法，最开始的想法就是echo接外部中断引脚，中断配置上升沿触发，当上升沿来时进入中断函数，打开定时器并配置 外部中断下降沿触发，当高电平时间结束出现下降沿时，关闭定时器，然后读取数据计算距离，但是当我测试的时候发现数据杂乱无章，如下是当时的代码。</p> 
+<ul>
+<p>​<strong>void PORTD_IRQHandler(void)</strong></p>
+<li>–{</li>
+<li>–   if(flag==0){</li>
+<li>–    pit_time_start  (PIT0);                 //开始计时</li>
+<li>–    port_init(PTD8, ALT1 | IRQ_FALLING | PULLUP  );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
+<li>–    flag=1;</li>
+<li>–   }</li>
+<li>–   else{</li>
+<li>–    flag=0;</li>
+<li>–     retured_hightime = pit_time_get_us    (PIT0);    //获取计时时间</li>
+<li>–     pit_close  (PIT0);                    //关闭PIT（可选择是否关闭）</li>
+<li>–     disable_irq(PORTD_IRQn);</li>
+<li>–   }</li>
+<li>–}</li>
+<p>​<strong>float get_distance()</strong></p>
+<li>–{</li>
+<li>–     float distance;</li>
+<li>–     float input_new;</li>
+<li>–     int qwe=0;</li>
+<li>–     gpio_init (PTA8, GPO,0); </li>
+<li>–     port_init(PTD8, ALT1 | IRQ_RISING | PULLDOWN );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
+<li>–     set_vector_handler(PORTD_VECTORn ,PORTD_IRQHandler);    //设置PORTE的中断服务函数为 PORTE_IRQHandler</li>
+<li>–     enable_irq (PORTD_IRQn);                                //使能PORTD中断    </li>
+<li>–     gpio_set (PTA8, 1);                                     //发送高电平</li>
+<li>–     DELAY_US(50);</li>
+<li>–     gpio_set (PTA8, 0);                                     //发送高电平</li>
+<li>–     DELAY_MS(500);</li>
+<li>–     input_new=retured_hightime;</li>
+<li>–     output_new=f_coe*input_new+output_last*(1-f_coe);</li>
+<li>–     output_last=output_new;    </li>
+<li>–     distance=output_new*0.000001*340/2.0;</li>
+<li>–     return distance;</li>
+<li>–</li>
+<li>–    flag=1;</li>
+<li>–    flag=1;</li>
+<li>–    flag=1;</li>
+<li>–{</li>
+<li>–    flag=1;</li>
+<li>–    flag=1;</li>
+<li>–    flag=1;</li>
+</ul>
 <p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年12月09日晚</p>
                 <hr>
                 <!-- Pager -->
