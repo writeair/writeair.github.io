@@ -208,12 +208,12 @@
 <li>–<strong>void PORTD_IRQHandler(void)</strong></li>
 <li>–{</li>
 <li>–　　if(flag==0){</li>
-<li>–    pit_time_start  (PIT0);                 //开始计时</li>
-<li>–    port_init(PTD8, ALT1 | IRQ_FALLING | PULLUP  );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
-<li>–    flag=1;</li>
+<li>–　　pit_time_start  (PIT0);                 //开始计时</li>
+<li>–　　port_init(PTD8, ALT1 | IRQ_FALLING | PULLUP  );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
+<li>–　　flag=1;</li>
 <li>–   }</li>
 <li>–   else{</li>
-<li>–    flag=0;</li>
+<li>–　　flag=0;</li>
 <li>–　　retured_hightime = pit_time_get_us    (PIT0);    //获取计时时间</li>
 <li>–　　pit_close  (PIT0);                    //关闭PIT（可选择是否关闭）</li>
 <li>–　　disable_irq(PORTD_IRQn);</li>
