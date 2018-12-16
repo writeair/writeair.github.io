@@ -197,6 +197,7 @@
                 <h2 id="制作进度介绍"> 1-制作进度</h2>
 <p><strong>2018年11月日：</strong>驱动模块焊好了，因为去年只做了单路的驱动板，这次在不知道车模信息的情况下把双路的驱动做好了，不过好像出了点小问题</p>                
 <p>​<strong>2018年12月9日：</strong>传感器模块制作完毕，测试通过，并安装于以前的车模上，新L车模估计得12月中旬才能发货，只能拿以前的暂时安装。</p>
+<p>​<strong>2018年12月12日：</strong>超声波模块和陀螺仪模块的代码测试完毕。</p>
 <p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/.HXBtyxBbMi1bnOhZFLh8QR7A1zl0TIXz1dydvtqNoM!/b/dNwAAAAAAAAA&bo=oAU4BAAAAAARF7k!&rf=viewer_4" alt="电磁部分"></p>
 <h2 id="模块调试"> 2-模块调试</h2>
 <p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/P1ifz4g5OAHHAs6y3AqUrmWVpqn4vi9DE8aXpInNqcM!/b/dLYAAAAAAAAA&bo=qQEXAgAAAAAKB5Y!&rf=viewer_4" alt="超声波模块"></p>
@@ -241,21 +242,21 @@
 </ul>
 <p>　　代码是基于山外库写的，当初听说山外的资源挺多的就想来蹭一蹭，学习学习。不过感觉山外大哥的工程不是很符合我的审美，iar界面本来就不好看，但山外库里面每一个功能的.c或者.h文件都是一起扔在外面，让我有点小别扭。所以后来我还是去了龙邱大哥的库，虽然库资源真的很少，不过干净就好了，其他库移植就好。上面的代码存在小问题，如果有大佬看到了方便指导我就再好不过了，QQ：1154515863，遇到问题了，在调试无果的情况下我选择去借鉴他人的代码，找了许久，找到了一个鸳鸯超声波的例程，还有不少51的超声波例程，鸳鸯的代码我看了一下思路和我的是一样的，但是他在开外部中断的时候是双边沿触发（一拍大腿，为啥我没想到），因此我花了点功夫将他的例程移植到了龙邱库内。代码如下。</p>
 <ul>
-<li>–void HCSR04_init()</li>
+<li>–<strong>void HCSR04_init()</strong></li>
 <li>–{</li>
 <li>–　　GPIO_Init (PORTB, 20,GPI,1); </li>
 <li>–　　EXTI_Init(PTB,20,either_up);//开启PTB20中断允许位</li>
 <li>–　　PIT0_calculate_Init();</li>
 <li>–　　EnableInterrupts;</li>
 <li>–}</li>
-<li>–void HCSR04_begin()</li>
+<li>–<strong>void HCSR04_begin()</strong></li>
 <li>–{ </li>
 <li>–　　GPIO_Init (PORTA, 17,GPO,0);   </li>
 <li>–　　GPIO_Ctrl  (PORTA, 17,1);  </li>
 <li>–　　LPTMR_delay_us(20); </li>
 <li>–　　GPIO_Ctrl  (PORTA, 17,0);  </li>
 <li>–　　LPTMR_delay_us(20); </li>
-<li>–void PORTB_Interrupt()</li>
+<li>–<strong>void PORTB_Interrupt()</strong></li>
 <li>–{ </li>
 <li>–　　int n;</li>
 <li>–　　n=20;</li>
@@ -280,6 +281,10 @@
 <li>–　　}</li>
 <li>–}</li>
 </ul>
+<p>　　上面的代码经过测试是在龙邱库内是可以用的，不过还存在误差，有时候会出现一点错乱，滤波一下会好一点。</p>
+<p>　　</p>
+<p>　　</p>
+<p>　　</p>
 <p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年12月09日晚</p>
                 <hr>
                 <!-- Pager -->
