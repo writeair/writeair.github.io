@@ -215,8 +215,7 @@
 <p>​　　所以我们采用了如下图的驱动方式,通过市电本身的电流通过脱扣器导致脱口（偷偷说：我才不会告诉你当在脱扣器两端电压为220V交流电的时候，脱扣器会发出剧烈的电流振动声音，然后我作死的持续导通光耦，导致脱扣器冒出一阵火花，然后光荣阵亡。结束语：在加市电的时候记得在实验室的实验桌子上通过变压器获取电流————————实验桌子上自带断路器，在触电的时候可以及时断开供电，而且可以给电脑和电压源等实验仪器供电，然后将插线板的电取到变压器两端再给板子供电。目的是：隔离板子与实验仪器，避免板子阵亡电脑也阵亡了！）单片机在收到断路请求的时候会在引脚产生一个持续高电平，导通光耦，由于两个500欧的电阻分压，导通场效应管，使1000MΩ的电阻短路，使得电压都加在脱扣器两端，脱扣器脱扣电流中断。其中光耦是用来隔离单片机和220V交流电的，避免单片机被损坏。</p>
 <p><div><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/YoAtoLLmWHo5Q.fvYbOcdmt4Ig62xSCD4fnlDBT0koc!/b/dFIBAAAAAAAA&bo=kAWIAgAAAAARFz8!&rf=viewer_4" alt="高电平"><div style="text-align:center;">光耦输入端高电平</div></div></p>
 <p><div><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/61Hb6m3gQ9c8*e8qyJ3k4pzSE4geyr3OPk4ZwOBCaFs!/b/dEgBAAAAAAAA&bo=dwVVAgAAAAARFwU!&rf=viewer_4" alt="低电平"><div style="text-align:center;">光耦输入端低电平</div></div></p>  
-<p>     （2019—2—2）现在脱扣部分是完成了，我们替换掉了原先设想的光耦使用继电器来进行隔离市电和单片机的电源，在我的测试中我发现实验室中存在的两种光耦1.tlp3052和2.moc3052在测试电路中不能正常的截止，询问百度后猜测是光耦的二极管电流需要小于某个阈值才能在输入端低电平的时候输出端截止。后来为了方便就直接使用了继电器做隔离，继电器有一个缺点就是速度不够快，如果我们做逆变器的时候继电器的开关速率会根本跟不上我们的pwm。</p>
-
+<p>　　[2019—2—2]现在脱扣部分是完成了，我们替换掉了原先设想的光耦使用继电器来进行隔离市电和单片机的电源，在我的测试中我发现实验室中存在的两种光耦1.tlp3052和2.moc3052在测试电路中不能正常的截止，询问百度后猜测是光耦的二极管电流需要小于某个阈值才能在输入端低电平的时候输出端截止。后来为了方便就直接使用了继电器做隔离，继电器有一个缺点就是速度不够快，如果我们做逆变器的时候继电器的开关速率会根本跟不上我们的pwm。</p>
 <p>​　　单片机我们采用stm32f103，需要开两路ADC采样，一路用来检测电流电压，另一路用来检测短路，另外我们需要一个IO口输出短路信号给驱动电路，wifi模块我们采用esp8266，只占用一组串口TXD，RXD，采用服务器模式，自身为热点，传递数据。</p>
 <ul>
 <p>​<strong>AT指令设置ESP8266为热点</strong></p>
@@ -226,8 +225,9 @@
 <li>–AT+CIPMUX=1 </li>
 <li>–AT+CIPSERVER=1,8086</li>
 </ul>
-<p>​详细的代码会在工程中给出......传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据.</p>
-
+<p>​详传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据，如下是我再hbuilder中写的两个关键的程序ajax访问数据库，socket和单片机连接。</p>
+<p><img src="/img/photo/ajax.jpg"><div style="text-align:center;">访问数据库</div></div></p>
+<p><img src="/img/photo/socket.jpg"><div style="text-align:center;">连接单片机</div></div></p>
 <p><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/exISG57YmEdgsLDBD8EKBsSqyvtsgAZ6XDDxKV44PUc!/b/dDYBAAAAAAAA&bo=BwVHAgAAAAARF2c!&rf=viewer_4" alt="HBUILDER"></p>
 <ul>
 <p>​<strong>GET——应该会返回一个电流电压信息</strong></p>
@@ -253,7 +253,7 @@
 <li>–AHOST:onbp6lcu.api.lncld.net,80</li>
 </ul>
  <a href="/pdf/breaker.pdf">
-        <div class="post-content-preview">智能断路器.pdf</div>
+        <div class="post-content-preview"><strong>点击此处可查看pdf文件</strong></div>
 </a>
 <p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年11月22日晚</p>
                 <hr>
