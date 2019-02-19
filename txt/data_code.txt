@@ -1,3 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 17 12:29:02 2019
+
+@author: 48572
+"""
+from sklearn import linear_model
+import numpy
+import matplotlib.pyplot as plt#用于作图
+f = open("data_example.txt","r")   #设置文件对象
+str = f.read()     #将txt文件的所有内容读入到字符串str中
+f.close()   #将文件关闭
+V_data=str.split("\n")[:-1]
+V_data_lenght=len(V_data)
+V_divdata=[]
+data=[]
+data_line=[]
+for i in range(V_data_lenght):
+    V_divdata.append(V_data[i][4:])
+V_divdata_lenght=len(V_divdata)    
+for i in range(V_divdata_lenght):
+    data.append(V_divdata[i].split(" "))
+V_divdata_divlenght=len(data[0])
+for i in range(V_divdata_divlenght):
+    for j in range(V_divdata_lenght):    
+        data_line.append(int(data[j][i]))
+data_line=numpy.array(data_line).reshape(V_divdata_divlenght,V_divdata_lenght)
+x = numpy.arange(0,V_divdata_lenght)  
+plt.xlabel('V')  
+plt.ylabel('times')  
 #print(V_divdata)
 #print(V_divdata_lenght)
 #print(data)
