@@ -225,7 +225,7 @@
 <li>–AT+CIPMUX=1 </li>
 <li>–AT+CIPSERVER=1,8086</li>
 </ul>
-<p>​详传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据，如下是我再hbuilder中写的两个关键的程序ajax访问数据库，socket和单片机连接。</p>
+<p>​　　详传输数据的时候肯定需要一个数据库拉，可以放我们收到的数据，我所用的是learncloud，在之前我并不是直接用esp8266和learncloud通信的，而是通过自己编写的App来通信，因为hbuilder软件的函数库很强大，所以在正确填写GET链接的头后没出现啥大问题，顺利的返回了数据，如下是我再hbuilder中写的两个关键的程序ajax访问数据库，socket和单片机连接。</p>
 <p><img src="/img/photo/ajax.jpg"><div style="text-align:center;">访问数据库</div></p>
 <p><img src="/img/photo/socket.jpg"><div style="text-align:center;">连接单片机</div></p>
 <p><img src="http://m.qpic.cn/psb?/V118OxZI2jsaTP/exISG57YmEdgsLDBD8EKBsSqyvtsgAZ6XDDxKV44PUc!/b/dDYBAAAAAAAA&bo=BwVHAgAAAAARF2c!&rf=viewer_4" alt="HBUILDER"></p>
@@ -237,7 +237,8 @@
 <li>–AContent-Type: application/json</li>
 <li>–Host: onbp6lcu.api.lncld.net</li>
 </ul>
-<p>​之后我试了一下想用ESp8266链接手机wifi，访问数据库一直没有成功，每次都返回301（重定向），至今还未解决。之后通过抓包工具发送GET数据成功返回，用CMD的telnet模拟发送GET返回301，用espAT指令发送GET也返回301，希望我早点发现那里弄错了吧！</p>
+<p>​　　之后我试了一下想用ESp8266链接手机wifi，访问数据库一直没有成功，每次都返回301（重定向），至今还未解决。之后通过抓包工具发送GET数据成功返回，用CMD的telnet模拟发送GET返回301，用espAT指令发送GET也返回301，希望我早点发现那里弄错了吧！</p>
+<p>​　　[2019—2—19]通过别人的指点，我终于明白了错在哪里，目前主流的网站基本提供的https的API，其端口为443，而目前少量网站提供http的API，其端口号为80。我使用的telnet只能应用于http协议的访问，如果访问https协议的他会返回一个301,（永久重定向），并给我https协议的地址。所以如果我要访问learncloud那么单纯的用AT指令是不够的，esp8266本身不提供https的协议。我现在有一个想法，就是如果数据库没提供http的API，那么我自己在阿里云建一个服务器，通过这个服务器访问learncloud是否可行？</p>
 <ul>
 <p>​<strong>GET——应该会返回301，我也不知道为什么，现在这里记下来等以后解决了再来补充！</strong></p>
 <li>–AT+CWMODE=3</li>
