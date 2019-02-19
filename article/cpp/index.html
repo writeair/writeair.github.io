@@ -194,7 +194,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="数据可视化"> 1-数据可视化/h2>
+                <h2 id="数据可视化"> 1-数据可视化</h2>
 <p>　　 1. 在调车的时候，为了方便够对串口发送的数据进行分析，所以用python写了一个将数据转化成图像的脚本，用于对电磁采样信号的分析，设定速度和测量速度的一致性分析（编码器的调试），代码如下：</p> 
 <ul>
 <li>–<strong>from sklearn import linear_model</strong></li>
@@ -263,52 +263,9 @@
 <li>print('...specific value ...')
 <li>print('k/k1:',k/k1)
 </ul>
-<p>　　代码是基于山外库写的，当初听说山外的资源挺多的就想来蹭一蹭，学习学习。不过感觉山外大哥的工程不是很符合我的审美，iar界面本来就不好看，但山外库里面每一个功能的.c或者.h文件都是一起扔在外面，让我有点小别扭。所以后来我还是去了龙邱大哥的库，虽然库资源真的很少，不过干净就好了，其他库移植就好。上面的代码存在小问题，如果有大佬看到了方便指导我就再好不过了，QQ：1154515863，遇到问题了，在调试无果的情况下我选择去借鉴他人的代码，找了许久，找到了一个鸳鸯超声波的例程，还有不少51的超声波例程，鸳鸯的代码我看了一下思路和我的是一样的，但是他在开外部中断的时候是双边沿触发（一拍大腿，为啥我没想到），因此我花了点功夫将他的例程移植到了龙邱库内。代码如下。</p>
-<ul>
-<li>–<strong>void HCSR04_init()</strong></li>
-<li>–{</li>
-<li>–　　GPIO_Init (PORTB, 20,GPI,1); </li>
-<li>–　　EXTI_Init(PTB,20,either_up);//开启PTB20中断允许位</li>
-<li>–　　PIT0_calculate_Init();</li>
-<li>–　　EnableInterrupts;</li>
-<li>–}</li>
-<li>–<strong>void HCSR04_begin()</strong></li>
-<li>–{ </li>
-<li>–　　GPIO_Init (PORTA, 17,GPO,0);   </li>
-<li>–　　GPIO_Ctrl  (PORTA, 17,1);  </li>
-<li>–　　LPTMR_delay_us(20); </li>
-<li>–　　GPIO_Ctrl  (PORTA, 17,0);  </li>
-<li>–　　LPTMR_delay_us(20); </li>
-<li>–<strong>void PORTB_Interrupt()</strong></li>
-<li>–{ </li>
-<li>–　　int n;</li>
-<li>–　　n=20;</li>
-<li>–　　if((PORTB_ISFR & (1<<n)))</li>
-<li>–　　{</li>
-<li>–　　　PORTB_ISFR |= (1<<n);</li>
-<li>–　　　LED_Ctrl(LED0,RVS);          //按下一次触发一次外部中断,对应LED亮一次</li>
-<li>–　　　if((PORTB->PDIR & (0x01<<20)))//检测到IO口是高电平，那么就是上升沿</li>
-<li>–　　　{</li>
-<li>–　　　　PIT_TCTRL0  &= ~PIT_TCTRL_TEN_MASK;//停止定时器</li>
-<li>–　　　　PIT_LDVAL0  = 0xFFFFFFFF;//32位定时器，装最大值即可</li>
-<li>–　　　　PIT_TCTRL0  |= PIT_TCTRL_TEN_MASK;//启动定时器</li>
-<li>–　　　　flag++;</li>
-<li>–　　　}</li>
-<li>–　　　else</li>
-<li>–　　　{</li>
-<li>–　　　　flag1++;</li>
-<li>–　　　　chaoshengboTime = (0xFFFFFFFF - PIT_CVAL0)/50;//50M总线时钟，计算得到时间，单位是微秒</li>
-<li>–　　　　ABDistance = chaoshengboTime * 340/1000;//一秒钟的声音速度假设为340米，由于chaoshengboTime单位是微秒，/1000后得到单位是mm   </li>
-<li>–　　　　PIT_TCTRL0  &= ~PIT_TCTRL_TEN_MASK;//停止定时器</li>
-<li>–　　　}</li>
-<li>–　　}</li>
-<li>–}</li>
-</ul>
-<p>　　上面的代码经过测试是在龙邱库内是可以用的，不过还存在误差，有时候会出现一点错乱，滤波一下会好一点。</p>
-<p>　　</p>
-<p>　　</p>
-<p>　　</p>
-<p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年12月09日晚</p>
+<p>　　上面的代码暂设置能将连续5个数据绘制成图像，数据格式为 V ：dd dd dd dd dd,将数据转化为折线图,之后又做了一个线性拟合，拟合当前数据的斜率和截距（只做了两组数据的，有需要可以自己添加）。</p>
+
+<p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2019年2月19日晚</p>
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
