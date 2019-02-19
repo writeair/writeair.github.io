@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          [CPP] 数据分析小工具 | 学习の在继续
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/essay/something-has-to-be-written/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://res.cloudinary.com/dqxtn0ick/image/upload/v1542285471/header/building.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag"  title="CPP">CPP</a>
+                            
+                        </div>
+                        <h1>[CPP] 数据分析小工具</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by blankair on
+                            2019-2-19
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">blankair</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                       <a href="/">Home</a>
+                       
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <!-- <a href="/about/">About</a>-->
+                             <a>About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                           <!--  <a href="/archive/">Archives</a>-->
+                            <a>Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                           <!--  <a href="/tags/">Tags</a>-->
+                            <a>Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="制作进度介绍"> 1-制作进度</h2>
+<p><strong>2018年11月日：</strong>驱动模块焊好了，因为去年只做了单路的驱动板，这次在不知道车模信息的情况下把双路的驱动做好了，不过好像出了点小问题</p>                
+<p>​<strong>2018年12月9日：</strong>传感器模块制作完毕，测试通过，并安装于以前的车模上，新L车模估计得12月中旬才能发货，只能拿以前的暂时安装。</p>
+<p>​<strong>2018年12月12日：</strong>超声波模块和陀螺仪模块的代码测试完毕。</p>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/.HXBtyxBbMi1bnOhZFLh8QR7A1zl0TIXz1dydvtqNoM!/b/dNwAAAAAAAAA&bo=oAU4BAAAAAARF7k!&rf=viewer_4" alt="电磁部分"></p>
+<h2 id="模块调试"> 2-模块调试</h2>
+<p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/P1ifz4g5OAHHAs6y3AqUrmWVpqn4vi9DE8aXpInNqcM!/b/dLYAAAAAAAAA&bo=qQEXAgAAAAAKB5Y!&rf=viewer_4" alt="超声波模块"></p>
+<h4 id="超声波"> 2.超声波模块-2018-12-12</h4>
+<p>　　超声波模块需要5V供电，Trig是触发信号输入端（需要送入5-15us的脉冲信号），echo是返回的距离信息，返回的是一段方波，方波的高电平时间就是超声波从发送到返回所用的时间。</p> 
+<p>　　测量距离=(高电平时间*340)/2,340是声速。</p> 
+<p>　　所以在使用超声波的时候我们最重要的是如何读取高电平的时间，有许多的想法，最开始的想法就是echo接外部中断引脚，中断配置上升沿触发，当上升沿来时进入中断函数，打开定时器并配置 外部中断下降沿触发，当高电平时间结束出现下降沿时，关闭定时器，然后读取数据计算距离，但是当我测试的时候发现数据杂乱无章，如下是当时的代码。</p> 
+<ul>
+<li>–<strong>void PORTD_IRQHandler(void)</strong></li>
+<li>–{</li>
+<li>–　　if(flag==0){</li>
+<li>–　　pit_time_start  (PIT0);                 //开始计时</li>
+<li>–　　port_init(PTD8, ALT1 | IRQ_FALLING | PULLUP  );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
+<li>–　　flag=1;</li>
+<li>–   }</li>
+<li>–   else{</li>
+<li>–　　flag=0;</li>
+<li>–　　retured_hightime = pit_time_get_us    (PIT0);    //获取计时时间</li>
+<li>–　　pit_close  (PIT0);                    //关闭PIT（可选择是否关闭）</li>
+<li>–　　disable_irq(PORTD_IRQn);</li>
+<li>–　　}</li>
+<li>–}</li>
+<li>–<strong>float get_distance()</strong></li>
+<li>–{</li>
+<li>–　　float distance;</li>
+<li>–　　float input_new;</li>
+<li>–　　int qwe=0;</li>
+<li>–　　gpio_init (PTA8, GPO,0); </li>
+<li>–　　port_init(PTD8, ALT1 | IRQ_RISING | PULLDOWN );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
+<li>–　　set_vector_handler(PORTD_VECTORn ,PORTD_IRQHandler);    //设置PORTE的中断服务函数为 PORTE_IRQHandler</li>
+<li>–　　enable_irq (PORTD_IRQn);                                //使能PORTD中断    </li>
+<li>–　　gpio_set (PTA8, 1);                                     //发送高电平</li>
+<li>–　　DELAY_US(50);</li>
+<li>–　　gpio_set (PTA8, 0);                                     //发送高电平</li>
+<li>–　　DELAY_MS(500);</li>
+<li>–　　input_new=retured_hightime;</li>
+<li>–　　output_new=f_coe*input_new+output_last*(1-f_coe);</li>
+<li>–　　output_last=output_new;    </li>
+<li>–　　distance=output_new*0.000001*340/2.0;</li>
+<li>–　　return distance;</li>
+<li>–}</li>
+</ul>
+<p>　　代码是基于山外库写的，当初听说山外的资源挺多的就想来蹭一蹭，学习学习。不过感觉山外大哥的工程不是很符合我的审美，iar界面本来就不好看，但山外库里面每一个功能的.c或者.h文件都是一起扔在外面，让我有点小别扭。所以后来我还是去了龙邱大哥的库，虽然库资源真的很少，不过干净就好了，其他库移植就好。上面的代码存在小问题，如果有大佬看到了方便指导我就再好不过了，QQ：1154515863，遇到问题了，在调试无果的情况下我选择去借鉴他人的代码，找了许久，找到了一个鸳鸯超声波的例程，还有不少51的超声波例程，鸳鸯的代码我看了一下思路和我的是一样的，但是他在开外部中断的时候是双边沿触发（一拍大腿，为啥我没想到），因此我花了点功夫将他的例程移植到了龙邱库内。代码如下。</p>
+<ul>
+<li>–<strong>void HCSR04_init()</strong></li>
+<li>–{</li>
+<li>–　　GPIO_Init (PORTB, 20,GPI,1); </li>
+<li>–　　EXTI_Init(PTB,20,either_up);//开启PTB20中断允许位</li>
+<li>–　　PIT0_calculate_Init();</li>
+<li>–　　EnableInterrupts;</li>
+<li>–}</li>
+<li>–<strong>void HCSR04_begin()</strong></li>
+<li>–{ </li>
+<li>–　　GPIO_Init (PORTA, 17,GPO,0);   </li>
+<li>–　　GPIO_Ctrl  (PORTA, 17,1);  </li>
+<li>–　　LPTMR_delay_us(20); </li>
+<li>–　　GPIO_Ctrl  (PORTA, 17,0);  </li>
+<li>–　　LPTMR_delay_us(20); </li>
+<li>–<strong>void PORTB_Interrupt()</strong></li>
+<li>–{ </li>
+<li>–　　int n;</li>
+<li>–　　n=20;</li>
+<li>–　　if((PORTB_ISFR & (1<<n)))</li>
+<li>–　　{</li>
+<li>–　　　PORTB_ISFR |= (1<<n);</li>
+<li>–　　　LED_Ctrl(LED0,RVS);          //按下一次触发一次外部中断,对应LED亮一次</li>
+<li>–　　　if((PORTB->PDIR & (0x01<<20)))//检测到IO口是高电平，那么就是上升沿</li>
+<li>–　　　{</li>
+<li>–　　　　PIT_TCTRL0  &= ~PIT_TCTRL_TEN_MASK;//停止定时器</li>
+<li>–　　　　PIT_LDVAL0  = 0xFFFFFFFF;//32位定时器，装最大值即可</li>
+<li>–　　　　PIT_TCTRL0  |= PIT_TCTRL_TEN_MASK;//启动定时器</li>
+<li>–　　　　flag++;</li>
+<li>–　　　}</li>
+<li>–　　　else</li>
+<li>–　　　{</li>
+<li>–　　　　flag1++;</li>
+<li>–　　　　chaoshengboTime = (0xFFFFFFFF - PIT_CVAL0)/50;//50M总线时钟，计算得到时间，单位是微秒</li>
+<li>–　　　　ABDistance = chaoshengboTime * 340/1000;//一秒钟的声音速度假设为340米，由于chaoshengboTime单位是微秒，/1000后得到单位是mm   </li>
+<li>–　　　　PIT_TCTRL0  &= ~PIT_TCTRL_TEN_MASK;//停止定时器</li>
+<li>–　　　}</li>
+<li>–　　}</li>
+<li>–}</li>
+</ul>
+<p>　　上面的代码经过测试是在龙邱库内是可以用的，不过还存在误差，有时候会出现一点错乱，滤波一下会好一点。</p>
+<p>　　</p>
+<p>　　</p>
+<p>　　</p>
+<p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2018年12月09日晚</p>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next" style="text-align:center;">
+                            <a href="/article/ethereum/ethereum-introduction/" data-toggle="tooltip" data-placement="top" title="[随笔] 坐井观天" >Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+                
+                <!-- require APlayer -->
+                
+                  
+                
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+                
+                    <div class="aplayer"
+                        data-id="002vbWwe3ZmffT"
+                        data-server="tencent"
+                        data-type="song"
+                        data-fixed="false" >
+                    </div>
+                
+
+                <br>
+
+             
+
+            </div>
+            
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#总得写点什么"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">写给自己的话</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+            
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- 来必力City版公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    <!-- 来必力City版 公共JS代码 end -->
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-114718458-2';
+    var _gaDomain = 'www.huweihuang.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'e146d71b77957235bba1e709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <a id="rocket" href="#top" class=""></a>
+    <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- <img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
