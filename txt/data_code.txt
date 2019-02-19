@@ -1,0 +1,43 @@
+#print(V_divdata)
+#print(V_divdata_lenght)
+#print(data)
+#print(V_divdata_divlenght)
+#print(data_line)
+plt.title("Five-channel sampling results")
+plt.plot(x,data_line[0],label="$outleft$") 
+plt.plot(x,data_line[1],label="$inleft$") 
+'''plt.plot(x,data_line[2],label="$center$")   
+plt.plot(x,data_line[3],label="$inright$")   
+plt.plot(x,data_line[4],label="$outright$") '''   
+
+'''获取第一条斜率和截距'''
+reg = linear_model.LinearRegression()
+reg.fit (x.reshape(-1,1),numpy.array(data_line[0]).reshape(-1,1))
+#斜率为
+k=reg.coef_
+#截距为
+b=reg.intercept_
+y0=k*x+b
+plt.plot(x,y0.reshape(-1,1),label="$example$") 
+'''获取第二条斜率和截距'''
+reg1 = linear_model.LinearRegression()
+reg1.fit (x.reshape(-1,1),numpy.array(data_line[1]).reshape(-1,1))
+#斜率为
+k1=reg1.coef_
+#截距为
+b1=reg1.intercept_
+y1=k1*x+b1
+plt.plot(x,y1.reshape(-1,1),label="$example2$") 
+
+plt.legend()
+plt.show()  
+'''first'''
+print('...first...')
+print('k',k)
+print('b',b)
+''''second'''
+print('...second...')
+print('k1:',k1)
+print('b1:',b1)
+print('...specific value ...')
+print('k/k1:',k/k1)
