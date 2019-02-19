@@ -194,51 +194,74 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="制作进度介绍"> 1-制作进度</h2>
-<p><strong>2018年11月日：</strong>驱动模块焊好了，因为去年只做了单路的驱动板，这次在不知道车模信息的情况下把双路的驱动做好了，不过好像出了点小问题</p>                
-<p>​<strong>2018年12月9日：</strong>传感器模块制作完毕，测试通过，并安装于以前的车模上，新L车模估计得12月中旬才能发货，只能拿以前的暂时安装。</p>
-<p>​<strong>2018年12月12日：</strong>超声波模块和陀螺仪模块的代码测试完毕。</p>
-<p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/.HXBtyxBbMi1bnOhZFLh8QR7A1zl0TIXz1dydvtqNoM!/b/dNwAAAAAAAAA&bo=oAU4BAAAAAARF7k!&rf=viewer_4" alt="电磁部分"></p>
-<h2 id="模块调试"> 2-模块调试</h2>
-<p><img src="http://m.qpic.cn/psb?/V118OxZI0VZ9Mt/P1ifz4g5OAHHAs6y3AqUrmWVpqn4vi9DE8aXpInNqcM!/b/dLYAAAAAAAAA&bo=qQEXAgAAAAAKB5Y!&rf=viewer_4" alt="超声波模块"></p>
-<h4 id="超声波"> 2.超声波模块-2018-12-12</h4>
-<p>　　超声波模块需要5V供电，Trig是触发信号输入端（需要送入5-15us的脉冲信号），echo是返回的距离信息，返回的是一段方波，方波的高电平时间就是超声波从发送到返回所用的时间。</p> 
-<p>　　测量距离=(高电平时间*340)/2,340是声速。</p> 
-<p>　　所以在使用超声波的时候我们最重要的是如何读取高电平的时间，有许多的想法，最开始的想法就是echo接外部中断引脚，中断配置上升沿触发，当上升沿来时进入中断函数，打开定时器并配置 外部中断下降沿触发，当高电平时间结束出现下降沿时，关闭定时器，然后读取数据计算距离，但是当我测试的时候发现数据杂乱无章，如下是当时的代码。</p> 
+                <h2 id="数据可视化"> 1-数据可视化/h2>
+<p>　　 1. 在调车的时候，为了方便够对串口发送的数据进行分析，所以用python写了一个将数据转化成图像的脚本，用于对电磁采样信号的分析，设定速度和测量速度的一致性分析（编码器的调试），代码如下：</p> 
 <ul>
-<li>–<strong>void PORTD_IRQHandler(void)</strong></li>
-<li>–{</li>
-<li>–　　if(flag==0){</li>
-<li>–　　pit_time_start  (PIT0);                 //开始计时</li>
-<li>–　　port_init(PTD8, ALT1 | IRQ_FALLING | PULLUP  );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
-<li>–　　flag=1;</li>
-<li>–   }</li>
-<li>–   else{</li>
-<li>–　　flag=0;</li>
-<li>–　　retured_hightime = pit_time_get_us    (PIT0);    //获取计时时间</li>
-<li>–　　pit_close  (PIT0);                    //关闭PIT（可选择是否关闭）</li>
-<li>–　　disable_irq(PORTD_IRQn);</li>
-<li>–　　}</li>
-<li>–}</li>
-<li>–<strong>float get_distance()</strong></li>
-<li>–{</li>
-<li>–　　float distance;</li>
-<li>–　　float input_new;</li>
-<li>–　　int qwe=0;</li>
-<li>–　　gpio_init (PTA8, GPO,0); </li>
-<li>–　　port_init(PTD8, ALT1 | IRQ_RISING | PULLDOWN );          //初始化 PTD7 管脚，复用功能为GPIO ，下降沿触发中断，上拉电阻</li>
-<li>–　　set_vector_handler(PORTD_VECTORn ,PORTD_IRQHandler);    //设置PORTE的中断服务函数为 PORTE_IRQHandler</li>
-<li>–　　enable_irq (PORTD_IRQn);                                //使能PORTD中断    </li>
-<li>–　　gpio_set (PTA8, 1);                                     //发送高电平</li>
-<li>–　　DELAY_US(50);</li>
-<li>–　　gpio_set (PTA8, 0);                                     //发送高电平</li>
-<li>–　　DELAY_MS(500);</li>
-<li>–　　input_new=retured_hightime;</li>
-<li>–　　output_new=f_coe*input_new+output_last*(1-f_coe);</li>
-<li>–　　output_last=output_new;    </li>
-<li>–　　distance=output_new*0.000001*340/2.0;</li>
-<li>–　　return distance;</li>
-<li>–}</li>
+<li>–<strong>from sklearn import linear_model</strong></li>
+<li>–<strong>import numpy</strong></li>
+<li>–<strong>import matplotlib.pyplot as plt#用于作图</strong></li>
+<li>f = open("data_example.txt","r")   #设置文件对象
+<li>str = f.read()     #将txt文件的所有内容读入到字符串str中
+<li>f.close()   #将文件关闭
+<li>V_data=str.split("\n")[:-1]
+<li>V_data_lenght=len(V_data)
+<li>V_divdata=[]
+<li>data=[]
+<li>data_line=[]
+<li>for i in range(V_data_lenght):
+<li>　　V_divdata.append(V_data[i][4:])
+<li>V_divdata_lenght=len(V_divdata)    
+<li>for i in range(V_divdata_lenght):
+<li>　　data.append(V_divdata[i].split(" "))
+<li>V_divdata_divlenght=len(data[0])
+<li>for i in range(V_divdata_divlenght):
+<li> 　　for j in range(V_divdata_lenght):    
+<li>　　　　data_line.append(int(data[j][i]))
+<li>data_line=numpy.array(data_line).reshape(V_divdata_divlenght,V_divdata_lenght)
+<li>x = numpy.arange(0,V_divdata_lenght)  
+<li>plt.xlabel('V')  
+<li>plt.ylabel('times')  
+<li>#print(V_divdata)
+<li>#print(V_divdata_lenght)
+<li>#print(data)
+<li>#print(V_divdata_divlenght)
+<li>#print(data_line)
+<li>plt.title("Five-channel sampling results")
+<li>plt.plot(x,data_line[0],label="$outleft$") 
+<li>plt.plot(x,data_line[1],label="$inleft$") 
+<li>'''plt.plot(x,data_line[2],label="$center$")   
+<li>plt.plot(x,data_line[3],label="$inright$")   
+<li>plt.plot(x,data_line[4],label="$outright$") '''   
+<li>'''获取第一条斜率和截距'''
+<li>reg = linear_model.LinearRegression()
+<li>reg.fit (x.reshape(-1,1),numpy.array(data_line[0]).reshape(-1,1))
+<li>#斜率为
+<li>k=reg.coef_
+<li>#截距为
+<li>b=reg.intercept_
+<li>y0=k*x+b
+<li>plt.plot(x,y0.reshape(-1,1),label="$example$") 
+<li>'''获取第二条斜率和截距'''
+<li>reg1 = linear_model.LinearRegression()
+<li>reg1.fit (x.reshape(-1,1),numpy.array(data_line[1]).reshape(-1,1))
+<li>#斜率为
+<li>k1=reg1.coef_
+<li>#截距为
+<li>b1=reg1.intercept_
+<li>y1=k1*x+b1
+<li>plt.plot(x,y1.reshape(-1,1),label="$example2$") 
+<li>plt.legend()
+<li>plt.show()  
+<li>'''first'''
+<li>print('...first...')
+<li>print('k',k)
+<li>print('b',b)
+<li>''''second'''
+<li>print('...second...')
+<li>print('k1:',k1)
+<li>print('b1:',b1)
+<li>print('...specific value ...')
+<li>print('k/k1:',k/k1)
 </ul>
 <p>　　代码是基于山外库写的，当初听说山外的资源挺多的就想来蹭一蹭，学习学习。不过感觉山外大哥的工程不是很符合我的审美，iar界面本来就不好看，但山外库里面每一个功能的.c或者.h文件都是一起扔在外面，让我有点小别扭。所以后来我还是去了龙邱大哥的库，虽然库资源真的很少，不过干净就好了，其他库移植就好。上面的代码存在小问题，如果有大佬看到了方便指导我就再好不过了，QQ：1154515863，遇到问题了，在调试无果的情况下我选择去借鉴他人的代码，找了许久，找到了一个鸳鸯超声波的例程，还有不少51的超声波例程，鸳鸯的代码我看了一下思路和我的是一样的，但是他在开外部中断的时候是双边沿触发（一拍大腿，为啥我没想到），因此我花了点功夫将他的例程移植到了龙邱库内。代码如下。</p>
 <ul>
