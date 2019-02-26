@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          [debugging] ESP8266调试日志 | 学习の在继续
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/essay/something-has-to-be-written/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+    <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('https://res.cloudinary.com/dqxtn0ick/image/upload/v1542285471/header/building.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag"  title="CPP">debugging</a>
+                            
+                        </div>
+                        <h1>[debugging] ESP8266调试日志</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by blankair on
+                            2019-2-26
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">blankair</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                       <a href="/">Home</a>
+                       
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <!-- <a href="/about/">About</a>-->
+                             <a>About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                           <!--  <a href="/archive/">Archives</a>-->
+                            <a>Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                           <!--  <a href="/tags/">Tags</a>-->
+                            <a>Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="数据可视化">ESP8266调试日志</h2>
+<p>　　 ESP8266是一款wifi模块，适合用来进行物联网开发，在拿到模块后，通过AT指令实现了手机APP与esp8266通过wifi进行通信的功能。在上个项目中我希望通过esp8266链接校园网，然后自主访问数据库，遭到失败，最后明白错误的原因，以下是我用esp8266调试时所记录的数据，代码如下：</p> 
+<ul>
+<li>–<strong>esp8266链接learncolud（未成功）</strong></li>
+<li>*******************************************</li>
+<li>AT+CWMODE=3</li>
+<li>AT+RST</li>
+<li>AT+CWJAP="1154515863","1154515863"</li>
+<li>AT+CIFSR</li>
+<li>AT+CIPSTART="TCP","onbp6lcu.api.lncld.net",80</li>
+<li>AT+CIPSEND=120</li>
+<li>GET https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88 HTTP/1.1</li>
+<li>Host: onbp6lcu.api.lncld.net</li>
+<li>X-LC-Id: OnBP6lCuzl8MmAJbtbHyvglI-gzGzoHsz</li>
+<li>X-LC-Key: HkCjTsi8nW8VJFN1XYKe5sVD</li>
+<li>User-Agent: arduino</li>
+<li>Connection: close</li>
+<li>Content-Type: application/json</li>
+<li></li>
+<li>*************************************************</li>
+<li>*************************************************</li>
+<li>串口助手显示Recv 120 bytes，但没有显示出来，用fiddler查看返回数据包大小</li>
+<li>*************************************************</li>
+<li>在Composer窗口填入以下数据</li>
+<li>GET</li>
+<li>https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88</li>
+<li>HTTP/1.0</li>
+<li>X-LC-Id: OnBP6lCuzl8MmAJbtbHyvglI-gzGzoHsz</li>
+<li>X-LC-Key: HkCjTsi8nW8VJFN1XYKe5sVD</li>
+<li>Content-Type: application/json</li>
+<li>Host: onbp6lcu.api.lncld.net</li>
+<li>*************************************************</li>
+<li>(获取成功)返回值：获得size=204 bytes</li>
+<li>{"Voltage":"3.41","Electric_current":"1.23","createdAt":"2018-09-17T02:38:05.412Z","updatedAt":"2019-01-08T01:26:34.602Z","Overcurrent_protection":true,"switch":true,"objectId":"5b9f138d1579a3003a72ce88"}</li>
+<li>*************************************************</li>
+<li>*************************************************</li>
+<li>命令行调试访问learncolud（未成功）</li>
+<li>cmd-></li>
+<li>telnet 106.75.35.31 80</li>
+<li>Ctrl+]-></li>
+<li>GET https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88 HTTP/1.1</li>
+<li>X-LC-Id: OnBP6lCuzl8MmAJbtbHyvglI-gzGzoHsz</li>
+<li>X-LC-Key: HkCjTsi8nW8VJFN1XYKe5sVD</li>
+<li>Content-Type: application/json</li>
+<li>Host: leancloud.cn</li>
+<li></li>
+<li>*************************************************</li>
+<li>末行需要空一行</li>
+<li>*************************************************</li>
+<li>返回值：</li>
+<li>HTTP/1.1 301 Moved Permanently</li>
+<li>Server: openresty</li>
+<li>Date: Fri, 08 Feb 2019 05:01:28 GMT</li>
+<li>Content-Type: text/html</li>
+<li>Content-Length: 178</li>
+<li>Connection: keep-alive</li>
+<li>Location: https://onbp6lcu.api.lncld.net/1.1/classes/Post/5b9f138d1579a3003a72ce88</li>
+<li>X-Request-Id: 0d37b1486c2e15c78ccfc55e4f1f84fe</li>
+<li>X-Request-Path: lb_218_221, m_6ae3032_516291c1_26959</li>
+<li>Strict-Transport-Security: max-age=31536000</li>
+<li></li>
+<li><html></li>
+<li><head><title>301 Moved Permanently</title></head></li>
+<li><body bgcolor="white"></li>
+<li><center><h1>301 Moved Permanently</h1></center></li>
+<li><hr><center>nginx</center></li>
+<li></body></li>
+<li></html></li>
+<li>**************************************************</li>
+<li>永久重定向暂未解决</li>
+<li>**************************************************</li>
+<li>**************************************************</li>
+<li>访问百度（成功）</li>
+<li>cmd-></li>
+<li>Telnet www.baidu.com 80</li>
+<li>Ctrl+]-></li>
+<li>GET / HTTP/1.1</li>
+<li>Host:www.baidu.com</li>
+<li>**************************************************</li>
+<li>返回值：</li>
+<li>HTTP/1.1 200 OK</li>
+<li>Accept-Ranges: bytes</li>
+<li>Cache-Control: no-cache</li>
+<li>Connection: Keep-Alive</li>
+<li>Content-Length: 14615</li>
+<li>Content-Type: text/html</li>
+<li>Date: Fri, 08 Feb 2019 05:53:05 GMT</li>
+<li>Etag: "5c36c624-3917"</li>
+<li>Last-Modified: Thu, 10 Jan 2019 04:12:20 GMT</li>
+<li>P3p: CP=" OTI DSP COR IVA OUR IND COM "</li>
+<li>Pragma: no-cache</li>
+<li>Server: BWS/1.1</li>
+<li>Set-Cookie: BAIDUID=5E2D1B19D13B11F362818F82D7800F4B:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: BIDUPSID=5E2D1B19D13B11F362818F82D7800F4B; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: PSTM=1549605185; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Vary: Accept-Encoding</li>
+<li>X-Ua-Compatible: IE=Edge,chrome=1</li>
+<li>*****************************************************</li>
+<li>*****************************************************</li>
+<li>用百度搜索1</li>
+<li>cmd-></li>
+<li>Telnet www.baidu.com 80</li>
+<li>Ctrl+]-></li>
+<li>GET /s?wd=1 HTTP/1.1</li>
+<li>Host:www.baidu.com</li>
+<li>**************************************************</li>
+<li>返回值：</li>
+<li>HTTP/1.1 200 OK</li>
+<li>Bdpagetype: 3</li>
+<li>Bdqid: 0xc679b1080000db3c</li>
+<li>Cache-Control: private</li>
+<li>Connection: Keep-Alive</li>
+<li>Content-Type: text/html;charset=utf-8</li>
+<li>Cxy_all: baidu+ce2605572ac1463954c5827b7a73f7a4</li>
+<li>Cxy_ex: 1549615218+1005434151+d41d8cd98f00b204e9800998ecf8427e</li>
+<li>Date: Fri, 08 Feb 2019 08:40:18 GMT</li>
+<li>P3p: CP=" OTI DSP COR IVA OUR IND COM "</li>
+<li>Server: BWS/1.1</li>
+<li>Set-Cookie: BAIDUID=E0582C3EB53B72A1A50B7547C5EB9BD8:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: BIDUPSID=E0582C3EB53B72A1A50B7547C5EB9BD8; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: PSTM=1549615218; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: delPer=0; path=/; domain=.baidu.com</li>
+<li>Set-Cookie: BD_CK_SAM=1;path=/</li>
+<li>Set-Cookie: PSINO=7; domain=.baidu.com; path=/</li>
+<li>Set-Cookie: BDSVRTM=201; path=/</li>
+<li>Set-Cookie: H_PS_PSSID=1447_21094_28328_26350_28415_20719; path=/; domain=.baidu.com</li>
+<li>Vary: Accept-Encoding</li>
+<li>X-Ua-Compatible: IE=Edge,chrome=1</li>
+<li>Transfer-Encoding: chunked</li>
+<li>***********************************************</li>
+<li>***********************************************</li>
+<li>百度百科</li>
+<li>cmd-></li>
+<li>telnet baike.baidu.com 80</li>
+<li>Ctrl+]-></li>
+<li>GET / HTTP/1.1</li>
+<li>Host: baike.baidu.com</li>
+<li>User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5</li>
+<li>**************************************************</li>
+<li>返回值：</li>
+<li></li>
+<li>*****************************************************</li>
+<li>*****************************************************</li>
+<li>天气获取调试</li>
+<li>cmd-></li>
+<li>telnet api.k780.com 80</li>
+<li>Ctrl+]-></li>
+<li>GET http://api.k780.com/?app=weather.future&weaid=1&appkey=38050&sign=74b43771fa7164a3de314c63a9be33f0&format=json HTTP/1.0</li>
+<li>****************************************************</li>
+<li>返回值：</li>
+<li>HTTP/1.1 200 OK</li>
+<li>Server: nginx</li>
+<li>Date: Fri, 15 Feb 2019 14:12:50 GMT</li>
+<li>Content-Type: application/json; charset=utf-8;</li>
+<li>Connection: close</li>
+<li>{"success":"1","result":[{"weaid":"1","days":"2019-02-15","week":"鏄熸湡浜?,"cityno":"beijing","citynm":"鍖椾含","cityid":"101010100","temperature":"2鈩?-7鈩?,"humidity":"0%/0%","weather":"鏅?,"weather_icon":"http://api.k780.com/upload/weather/d/0.gif","weather_icon1":"http://api.k780.com/upload/weather/n/0.gif","wind":"鏃犳寔缁鍚?,"winp":"3-4绾?,"temp_high":"2","temp_low":"-7","humi_high":"0","humi_low":"0","weatid":"1","weatid1":"1","windid":"124","winpid":"14","weather_iconid":"0","weather_iconid1":"0"},{"weaid":"1","days":"2019-02-16","week":"鏄熸湡鍏?,"cityno":"beijing","citynm":"鍖椾含","cityid":"101010100".................</li>
+<li>******************************************************</li>
+<li>******************************************************</li>
+</ul>
+ <a href="/pdf/debugging.pdf">
+        <div class="post-content-preview"><strong>点击此处可查看pdf文件</strong></div>
+</a>
+<p>　​　　　　　　　　　　　　　​　　​　　　　　　　　　　———于2019年2月19日晚</p>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next" style="text-align:center;">
+                            <a href="/article/ethereum/ethereum-introduction/" data-toggle="tooltip" data-placement="top" title="[随笔] 坐井观天" >Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+                
+                <!-- require APlayer -->
+                
+                  
+                
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+                
+                    <div class="aplayer"
+                        data-id="002vbWwe3ZmffT"
+                        data-server="tencent"
+                        data-type="song"
+                        data-fixed="false" >
+                    </div>
+                
+
+                <br>
+
+             
+
+            </div>
+            
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#总得写点什么"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">写给自己的话</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+            
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- 来必力City版公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    <!-- 来必力City版 公共JS代码 end -->
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-114718458-2';
+    var _gaDomain = 'www.huweihuang.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'e146d71b77957235bba1e709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <a id="rocket" href="#top" class=""></a>
+    <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<!-- <img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
